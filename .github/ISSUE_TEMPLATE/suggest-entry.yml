@@ -1,0 +1,60 @@
+name: Suggest a resource, tool or AI service
+description: Tell us about something UK arts and humanities researchers can use. You don't need to fill in every detail.
+title: "Suggest: "
+labels: ["suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for contributing. A maintainer will check your suggestion and add it to the registry, crediting you.
+        Please only share information that is publicly available. Use team contact addresses, not named individuals.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of entry is it?
+      options:
+        - Resource (compute that runs your work on someone else's hardware)
+        - Tool or model (software you run yourself, or a model library)
+        - AI service (a chat assistant or model API)
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name
+    validations:
+      required: true
+  - type: input
+    id: provider
+    attributes:
+      label: Provider or organisation
+  - type: input
+    id: webpage
+    attributes:
+      label: Webpage
+      placeholder: https://
+  - type: textarea
+    id: description
+    attributes:
+      label: What is it, and what is it good for in arts and humanities research?
+  - type: textarea
+    id: access
+    attributes:
+      label: Who can use it, how do you get access, and what does it cost?
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Links where the information above can be checked.
+  - type: input
+    id: credit
+    attributes:
+      label: How should we credit you?
+      description: Your name as you would like it to appear in "Collected by". Leave blank to stay anonymous.
+  - type: checkboxes
+    id: licence
+    attributes:
+      label: Licence
+      options:
+        - label: I agree that my contribution is published under CC BY 4.0, like the rest of the registry data.
+          required: true

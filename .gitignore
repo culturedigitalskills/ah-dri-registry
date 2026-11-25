@@ -1,0 +1,6 @@
+# Built by scripts/build.py and published by the GitHub Action
+site/
+
+__pycache__/
+*.pyc
+.DS_Store

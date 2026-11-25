@@ -1,0 +1,28 @@
+name: Report a correction
+description: Something in the registry is wrong or out of date.
+title: "Correction: "
+labels: ["correction"]
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: Which entry?
+      description: Its name, or its ID from the web address (e.g. isambard-ai).
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What is wrong, and what should it say?
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source
+      description: A link where the correct information can be checked.
+  - type: input
+    id: credit
+    attributes:
+      label: How should we credit you?
+      description: Optional.
