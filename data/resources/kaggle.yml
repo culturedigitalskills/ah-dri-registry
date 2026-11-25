@@ -1,0 +1,42 @@
+id: kaggle
+name: Kaggle Notebooks
+provider: Google (Kaggle)
+provider_level: Commercial
+national_programme: Not applicable
+webpage: https://www.kaggle.com
+description: Free browser-based notebooks from Kaggle (Google), with a weekly GPU quota and a large library of datasets and models.
+good_for: Free small-scale experiments and learning; sharing reproducible notebooks.
+eosc_subcategory: Other
+architecture: CPU + GPU
+interface: Notebook
+eligibility: Anyone with a Kaggle account.
+how_to_apply: Create a free account at https://www.kaggle.com.
+time_to_access: Same day (sign up and start).
+access_mode: Free
+cost_band: Free at point of use
+contact: Vendor support (Kaggle help pages)
+last_checked: '2026-11-25'
+short_name: Kaggle
+tagline: Free browser notebooks with GPUs and datasets
+scientific_domain: Generic
+target_users: Researchers
+geographical_availability: Worldwide
+language_availability: English and many other languages
+order_type: Open Access
+system_type: Notebook service
+ai_models_available: Run your own models (open-weight or self-trained)
+application_window: Not applicable (sign up any time)
+login_method: Own account
+access_type: Virtual
+indicative_cost: Free (weekly GPU quota).
+costable_in_grants: 'No'
+server_location: Google data centres; location not chosen by the user
+sensitive_data: 'No'
+certifications: None stated
+terms_of_use_url: https://www.kaggle.com/terms
+privacy_policy_url: https://www.kaggle.com/privacy
+energy_carbon_info: Company-level sustainability reports only; no per-job figures
+user_manual_url: https://www.kaggle.com/docs
+training_url: https://www.kaggle.com/learn
+life_cycle_status: Production
+collected_by: Karina, AI-assisted (Claude)

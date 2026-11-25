@@ -1,0 +1,14 @@
+id: microsoft-copilot
+name: Microsoft Copilot
+provider: Microsoft
+version: Free consumer
+access: App
+institutional_licence: 'No'
+trains_on_inputs: 'Yes'
+data_location: No choice of region [to be confirmed]
+sensitive_data: 'No'
+cost: Free + paid tiers
+model_openness: Proprietary
+webpage: https://copilot.microsoft.com
+last_checked: '2026-11-25'
+notes: Personal Microsoft account. Conversations may be used for training unless you opt out in settings. Not the same as Copilot Chat signed in with a university account

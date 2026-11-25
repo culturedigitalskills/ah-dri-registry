@@ -1,0 +1,43 @@
+id: isambard-ai
+name: Isambard-AI
+provider: University of Bristol
+provider_level: National
+national_programme: AIRR
+webpage: https://docs.isambard.ac.uk
+description: The UK's most powerful public AI supercomputer, with about 5,400 NVIDIA GH200 GPU superchips. Part of the national AI Research Resource (AIRR); free access through AIRR calls, including Rapid Access of up to 20,000 GPU hours.
+good_for: 'Large AI work: training or fine-tuning models, and running language or vision models over big text, image or audio collections.'
+eosc_subcategory: Job Execution
+architecture: CPU + GPU
+interface: Command line + web portal
+eligibility: UK-based researchers from academia, industry and other organisations, via AIRR access routes (Gateway open all year). Projects must be conducted in the UK.
+how_to_apply: 'Apply through the AIRRPortal (Rapid Access or Gateway route; Gateway open all year): https://portal-airr.isambard.ac.uk. UKRI guidance: https://apply.isambard.ac.uk/ukri'
+time_to_access: Applications accepted all year; decision time not published. Awards must be used within 3 months of project start.
+access_mode: Peer Reviewed
+cost_band: Allocation-based
+contact: 'Applications: UKRI AIRR team, airr@ukri.org. Service: Bristol Centre for Supercomputing, brics-enquiries@bristol.ac.uk'
+last_checked: '2026-11-25'
+short_name: Isambard-AI
+tagline: The UK's most powerful public AI supercomputer
+scientific_domain: Generic
+target_users: Researchers
+geographical_availability: United Kingdom (projects must be conducted in the UK)
+language_availability: English
+order_type: Order Required
+system_type: Dedicated AI system
+ai_models_available: Run your own models (open-weight or self-trained)
+application_window: Open all year
+login_method: Institutional login
+access_type: Remote
+indicative_cost: 'No charge to the researcher: GPU hours awarded (Rapid Access up to 20,000; Gateway up to 10,000).'
+costable_in_grants: 'No'
+server_location: UK (Bristol)
+sensitive_data: With conditions
+certifications: None found
+terms_of_use_url: https://docs.isambard.ac.uk/policies/access_terms/
+privacy_policy_url: 'AIRR portal: https://portal-airr.isambard.ac.uk/privacy/ (data processing terms: https://docs.isambard.ac.uk/policies/data_processing_terms/)'
+energy_carbon_info: Provider states it runs on 100% renewable electricity, with direct liquid cooling, PUE below 1.1 and planned waste-heat reuse; ranked 4th on the Green500 at launch.
+user_manual_url: https://docs.isambard.ac.uk
+training_url: https://docs.isambard.ac.uk/training/
+life_cycle_status: Production
+collected_by: Karina, AI-assisted (Claude)
+notes: Part of the AI Research Resource (AIRR). Serves public researchers, academia and SMEs; the Gateway route supports first-time users.

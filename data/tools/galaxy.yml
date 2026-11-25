@@ -1,0 +1,12 @@
+id: galaxy
+name: Galaxy
+type: Other
+organisation: Galaxy Project (open-source)
+webpage: https://galaxyproject.org
+runs_on: HPC or cloud
+cost: Free
+data_stays_local: 'Yes'
+ease_of_use: Web interface
+works_on:
+- usegalaxy-eu
+notes: Free web platform for building and sharing analysis workflows. An institution can install it on its own server or cluster, with AI and ML tools from the Galaxy ToolShed. Public servers such as UseGalaxy.eu are on the Resources tab

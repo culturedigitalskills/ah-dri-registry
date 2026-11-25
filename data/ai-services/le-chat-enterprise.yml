@@ -1,0 +1,14 @@
+id: le-chat-enterprise
+name: Le Chat Enterprise
+provider: Mistral AI
+version: Institutional / education
+access: App
+institutional_licence: Check locally
+trains_on_inputs: 'No'
+data_location: EU by default
+sensitive_data: With conditions
+cost: Paid
+model_openness: Mixed
+webpage: https://mistral.ai/products/le-chat
+last_checked: '2026-11-25'
+notes: Opted out of training by default

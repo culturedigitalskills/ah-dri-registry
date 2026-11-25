@@ -1,0 +1,13 @@
+id: ollama
+name: Ollama
+type: Model runner + library
+organisation: Ollama
+webpage: https://ollama.com
+runs_on: Own computer or HPC
+licence: MIT
+cost: Free
+data_stays_local: Optional
+ease_of_use: Mixed
+works_on:
+- ollama-cloud
+notes: Free software to run open models on your own hardware. Optional cloud models are listed as Ollama Cloud on the Resources tab

@@ -1,0 +1,38 @@
+id: sulis
+name: Sulis
+provider: University of Warwick (HPC Midlands+)
+provider_level: Institutional
+national_programme: Tier-2 (legacy)
+webpage: https://warwick.ac.uk/research/rtp/sc/sulis
+description: Warwick-hosted Tier-2 system (about 25,700 CPU cores and 90 NVIDIA A100 GPUs) built for running many smaller jobs. Exploratory access ended in March 2026.
+good_for: Running many medium-sized jobs; now mainly for Midlands consortium users.
+eosc_subcategory: Job Execution
+architecture: CPU + GPU
+eligibility: HPC Midlands+ consortium members via local research computing teams (until March 2026); no further UKRI calls.
+how_to_apply: 'Effectively closed to new users: consortium access ended March 2026 and there are no further UKRI calls.'
+time_to_access: Not available.
+access_mode: Free Conditionally
+cost_band: Free at point of use
+last_checked: '2026-11-25'
+short_name: Sulis
+tagline: Midlands HPC for many smaller jobs (winding down)
+scientific_domain: Generic
+target_users: Researchers
+geographical_availability: United Kingdom (Midlands consortium)
+language_availability: English
+order_type: Order Required
+system_type: HPC cluster
+ai_models_available: Run your own models (open-weight or self-trained)
+application_window: Closed
+login_method: Own account
+access_type: Remote
+indicative_cost: Not available to new users.
+costable_in_grants: 'No'
+server_location: UK (Warwick)
+sensitive_data: Unknown
+certifications: None found
+energy_carbon_info: Provider states a PUE of 1.12.
+user_manual_url: https://sulis-hpc.github.io
+life_cycle_status: Retirement
+collected_by: Karina, AI-assisted (Claude)
+notes: Tier-2 service; exploratory access ended March 2026

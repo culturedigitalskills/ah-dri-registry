@@ -1,0 +1,41 @@
+id: dawn
+name: Dawn
+provider: University of Cambridge
+provider_level: National
+national_programme: AIRR
+webpage: https://www.csd3.cam.ac.uk/access-dawn
+description: Cambridge AI supercomputer with 1,024 Intel Data Centre GPU Max GPUs, part of AIRR. Now upgraded as Zenith.
+good_for: AI projects through AIRR, if still offered. Intel GPUs may need some software adapted.
+eosc_subcategory: Job Execution
+architecture: CPU + GPU
+interface: Command line + web portal
+eligibility: UK-based public researchers, academia and SMEs via AIRR routes; projects must be conducted in the UK.
+how_to_apply: 'Apply through the AIRRPortal: https://portal-airr.isambard.ac.uk. Non-Cambridge users then send an SSH public key to support@hpc.cam.ac.uk.'
+time_to_access: Applications accepted all year; decision time not published. Awards must be used within 3 months of project start.
+access_mode: Peer Reviewed
+cost_band: Allocation-based
+contact: 'Applications: airr@ukri.org. Service: Cambridge Research Computing Services, support@hpc.cam.ac.uk'
+last_checked: '2026-11-25'
+short_name: Dawn
+tagline: Cambridge AI supercomputer with Intel GPUs
+scientific_domain: Generic
+target_users: Researchers
+geographical_availability: United Kingdom (projects must be conducted in the UK)
+language_availability: English
+order_type: Order Required
+system_type: Dedicated AI system
+ai_models_available: Run your own models (open-weight or self-trained)
+application_window: Open all year
+login_method: Institutional login
+access_type: Remote
+indicative_cost: 'No charge to the researcher: GPU hours awarded through AIRR.'
+costable_in_grants: 'No'
+server_location: UK (Cambridge)
+sensitive_data: Unknown
+certifications: None found
+privacy_policy_url: 'AIRR portal: https://portal-airr.isambard.ac.uk/privacy/'
+energy_carbon_info: Not published (Dawn has been replaced by Zenith)
+user_manual_url: https://docs.hpc.cam.ac.uk
+training_url: https://www.hpc.cam.ac.uk/training-consultancy
+collected_by: Karina, AI-assisted (Claude)
+notes: Part of AIRR; check whether still offered alongside Zenith

@@ -1,0 +1,43 @@
+id: colab
+name: Google Colab
+provider: Google
+provider_level: Commercial
+national_programme: Not applicable
+webpage: https://colab.research.google.com
+description: Google's browser-based notebook service, with free GPU access, paid Pro tiers, and built-in Gemini models for subscribers.
+good_for: Learning, teaching and small AI experiments, such as transcription, OCR or image classification on small collections.
+eosc_subcategory: Other
+architecture: CPU + GPU
+interface: Notebook
+eligibility: Anyone with a Google account; paid tiers by subscription.
+how_to_apply: Sign in with a Google account at https://colab.research.google.com; upgrade to Pro for more resources.
+time_to_access: Same day (sign in and start).
+access_mode: Free
+cost_band: Mixed
+contact: Vendor support (Google Colab help centre)
+last_checked: '2026-11-25'
+short_name: Colab
+tagline: Browser notebooks with free GPUs
+scientific_domain: Generic
+target_users: Researchers
+geographical_availability: Worldwide
+language_availability: English and many other languages
+order_type: Open Access
+system_type: Notebook service
+ai_models_available: Run your own + hosted models (paid)
+application_window: Not applicable (sign up any time)
+login_method: Own account
+access_type: Virtual
+indicative_cost: Free tier. Pro about $9.99/month (100 compute units); Pro+ about $49.99/month. A T4 GPU uses about 1.2 to 1.8 units per hour.
+costable_in_grants: Unsure
+pricing_url: https://colab.research.google.com/signup
+server_location: Google data centres; location not chosen by the user
+sensitive_data: 'No'
+certifications: None stated for consumer Colab
+terms_of_use_url: https://policies.google.com/terms
+privacy_policy_url: https://policies.google.com/privacy
+energy_carbon_info: Company-level sustainability reports only; no per-job figures
+user_manual_url: https://research.google.com/colaboratory/faq.html
+training_url: https://colab.research.google.com/notebooks/intro.ipynb
+life_cycle_status: Production
+collected_by: Karina, AI-assisted (Claude)

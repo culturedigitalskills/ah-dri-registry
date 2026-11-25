@@ -1,0 +1,309 @@
+# Controlled vocabularies for the registry.
+#
+# Each list gives the allowed values for one field. Where a value matches an
+# EOSC Service Profile v5.0 vocabulary term, its EOSC ID is given so the build
+# can produce an EOSC-compatible export.
+#
+# If you change this file, run `python scripts/generate.py` to update
+# schema/*.schema.json and .pages.yml (the GitHub Action checks they match).
+
+provider_level:
+  - label: Institutional
+  - label: Regional
+  - label: National
+  - label: Commercial
+  - label: International
+
+national_programme:
+  - label: AIRR
+  - label: NCR
+  - label: AIRR + NCR
+  - label: Tier-1
+  - label: Tier-2 (legacy)
+  - label: Other national service
+  - label: Not applicable
+
+eosc_subcategory:
+  - label: Virtual Machine Management
+    eosc_id: subcategory-access_physical_and_einfrastructures-compute-virtual_machine_management
+  - label: Container Management
+    eosc_id: subcategory-access_physical_and_einfrastructures-compute-container_management
+  - label: Job Execution
+    eosc_id: subcategory-access_physical_and_einfrastructures-compute-job_execution
+  - label: Workload Management
+    eosc_id: subcategory-access_physical_and_einfrastructures-compute-workload_management
+  - label: Orchestration
+    eosc_id: subcategory-access_physical_and_einfrastructures-compute-orchestration
+  - label: Serverless Applications Repository
+    eosc_id: subcategory-access_physical_and_einfrastructures-compute-serverless_applications_repository
+  - label: Other
+    eosc_id: subcategory-access_physical_and_einfrastructures-compute-other
+
+architecture:
+  - label: CPU only
+  - label: CPU + GPU
+  - label: Other accelerator
+  - label: Unknown
+
+interface:
+  - label: Web interface
+  - label: Notebook
+  - label: Command line
+  - label: Command line + web portal
+
+access_mode:
+  - label: Free
+    eosc_id: access_mode-free
+  - label: Free Conditionally
+    eosc_id: access_mode-free_conditionally
+  - label: Peer Reviewed
+    eosc_id: access_mode-peer_reviewed
+  - label: Paid
+    eosc_id: access_mode-paid
+  - label: Other
+    eosc_id: access_mode-other
+
+cost_band:
+  - label: Free at point of use
+  - label: Allocation-based
+  - label: Internal recharge
+  - label: Commercial
+  - label: Mixed
+  - label: Unknown
+
+scientific_domain:
+  - label: Humanities
+    eosc_id: scientific_domain-humanities
+  - label: Social Sciences
+    eosc_id: scientific_domain-social_sciences
+  - label: Generic
+    eosc_id: scientific_domain-generic
+  - label: Natural Sciences
+    eosc_id: scientific_domain-natural_sciences
+  - label: Engineering & Technology
+    eosc_id: scientific_domain-engineering_and_technology
+  - label: Medical & Health Sciences
+    eosc_id: scientific_domain-medical_and_health_sciences
+  - label: Agricultural Sciences
+    eosc_id: scientific_domain-agricultural_sciences
+  - label: Other
+    eosc_id: scientific_domain-other
+
+target_users:
+  - label: Researchers
+    eosc_id: target_user-researchers
+  - label: Research Groups
+    eosc_id: target_user-research_groups
+  - label: Research Projects
+    eosc_id: target_user-research_projects
+  - label: Research Communities
+    eosc_id: target_user-research_communities
+  - label: Research Networks
+    eosc_id: target_user-research_networks
+  - label: Research Organisations
+    eosc_id: target_user-research_organisations
+  - label: Students
+    eosc_id: target_user-students
+  - label: Research Managers
+    eosc_id: target_user-research_managers
+  - label: Research Infrastructure Managers
+    eosc_id: target_user-research_infrastructure_managers
+  - label: Resource Managers
+    eosc_id: target_user-resource_managers
+  - label: Provider Managers
+    eosc_id: target_user-resource_provider_managers
+  - label: Providers
+    eosc_id: target_user-providers
+  - label: Businesses
+    eosc_id: target_user-businesses
+  - label: Innovators
+    eosc_id: target_user-innovators
+  - label: Funders
+    eosc_id: target_user-funders
+  - label: Policy Makers
+    eosc_id: target_user-policy_makers
+  - label: Publishers
+    eosc_id: target_user-publishers
+  - label: Other
+    eosc_id: target_user-other
+
+trl:
+  - label: 1 - basic principles observed
+    eosc_id: trl-1
+  - label: 2 - technology concept formulated
+    eosc_id: trl-2
+  - label: 3 - experimental proof of concept
+    eosc_id: trl-3
+  - label: 4 - technology validated in lab
+    eosc_id: trl-4
+  - label: 5 - technology validated in relevant environment
+    eosc_id: trl-5
+  - label: 6 - technology demonstrated in relevant environment
+    eosc_id: trl-6
+  - label: 7 - system prototype demonstration in operational environment
+    eosc_id: trl-7
+  - label: 8 - system complete and qualified
+    eosc_id: trl-8
+  - label: 9 - actual system proven in operational environment
+    eosc_id: trl-9
+
+order_type:
+  - label: Fully Open Access
+    eosc_id: order_type-fully_open_access
+  - label: Open Access
+    eosc_id: order_type-open_access
+  - label: Order Required
+    eosc_id: order_type-order_required
+  - label: Other
+    eosc_id: order_type-other
+
+system_type:
+  - label: HPC cluster
+  - label: Cloud virtual machines
+  - label: Containers
+  - label: Notebook service
+  - label: Dedicated AI system
+  - label: Other
+
+ai_models_available:
+  - label: Run your own models (open-weight or self-trained)
+  - label: Run your own + hosted models (paid)
+  - label: Run your own + hosted models (included)
+  - label: Hosted models only
+  - label: None
+  - label: Unknown
+
+application_window:
+  - label: Open all year
+  - label: Periodic calls
+  - label: Not yet published
+  - label: Closed
+  - label: Not applicable (sign up any time)
+
+login_method:
+  - label: Institutional login
+  - label: eduGAIN
+  - label: Own account
+  - label: Other
+
+access_type:
+  - label: Remote
+    eosc_id: access_type-remote
+  - label: Virtual
+    eosc_id: access_type-virtual
+  - label: Physical
+    eosc_id: access_type-physical
+  - label: Mail-In
+    eosc_id: access_type-mail_in
+  - label: Other
+    eosc_id: access_type-other
+
+grant_costing:
+  - label: Usually, check funder rules
+  - label: "No"
+  - label: Unsure
+
+sensitive_data:
+  - label: "Yes"
+  - label: "No"
+  - label: With conditions
+  - label: Unknown
+
+life_cycle_status:
+  - label: Production
+    eosc_id: life_cycle_status-production
+  - label: Operation
+    eosc_id: life_cycle_status-operation
+  - label: Beta
+    eosc_id: life_cycle_status-beta
+  - label: Alpha
+    eosc_id: life_cycle_status-alpha
+  - label: Implementation
+    eosc_id: life_cycle_status-implementation
+  - label: Planned
+    eosc_id: life_cycle_status-planned
+  - label: Preparation
+    eosc_id: life_cycle_status-preparation
+  - label: Design
+    eosc_id: life_cycle_status-design
+  - label: Discovery
+    eosc_id: life_cycle_status-discovery
+  - label: Concept
+    eosc_id: life_cycle_status-concept
+  - label: In containment
+    eosc_id: life_cycle_status-in_containment
+  - label: Retirement
+    eosc_id: life_cycle_status-retirement
+  - label: Termination
+    eosc_id: life_cycle_status-termination
+  - label: Other
+    eosc_id: life_cycle_status-other
+
+# --- Tools and models ---
+
+tool_type:
+  - label: Model runner
+  - label: Model library
+  - label: Model runner + library
+  - label: User interface
+  - label: Other
+
+runs_on:
+  - label: Own computer
+  - label: Own computer or HPC
+  - label: HPC or cloud
+  - label: Cloud only
+  - label: Any
+
+tool_cost:
+  - label: Free
+  - label: Free + paid tiers
+  - label: Paid
+  - label: Unknown
+
+data_stays_local:
+  - label: "Yes"
+  - label: "No"
+  - label: Optional
+  - label: Unknown
+
+ease_of_use:
+  - label: Desktop app
+  - label: Web interface
+  - label: Command line
+  - label: Mixed
+
+# --- AI services ---
+
+ai_version:
+  - label: Free consumer
+  - label: Paid individual
+  - label: Institutional / education
+  - label: API
+
+ai_access:
+  - label: App
+  - label: API
+  - label: App and API
+
+institutional_licence:
+  - label: "Yes"
+  - label: "No"
+  - label: Check locally
+
+trains_on_inputs:
+  - label: "Yes"
+  - label: "No"
+  - label: Opt-out available
+  - label: Unknown
+
+ai_cost:
+  - label: Free
+  - label: Free + paid tiers
+  - label: Paid
+  - label: Pay per use
+
+model_openness:
+  - label: Proprietary
+  - label: Open-weight
+  - label: Mixed

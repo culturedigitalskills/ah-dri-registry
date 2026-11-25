@@ -1,0 +1,14 @@
+id: openai-api
+name: OpenAI API
+provider: OpenAI
+version: API
+access: API
+institutional_licence: 'No'
+trains_on_inputs: 'No'
+data_location: Region chosen per project (UK, Europe and others) at 10% extra cost; the default endpoint makes no location promise
+sensitive_data: With conditions
+cost: Pay per use
+model_openness: Proprietary
+webpage: https://platform.openai.com
+last_checked: '2026-11-25'
+notes: Inputs and outputs not used for training by default

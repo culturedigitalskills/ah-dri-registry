@@ -1,0 +1,10 @@
+id: llama-cpp
+name: llama.cpp
+type: Model runner
+organisation: ggml (open-source project)
+webpage: https://github.com/ggml-org/llama.cpp
+runs_on: Own computer or HPC
+licence: MIT
+cost: Free
+data_stays_local: 'Yes'
+ease_of_use: Command line

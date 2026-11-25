@@ -1,0 +1,43 @@
+id: isambard-3
+name: Isambard 3
+provider: University of Bristol (GW4)
+provider_level: National
+national_programme: NCR
+webpage: https://docs.isambard.ac.uk
+description: CPU-only Arm supercomputer (NVIDIA Grace, 55,296 cores) run with the GW4 universities. A UKRI National Compute Resource since April 2026.
+good_for: 'Large CPU processing and simulations. AI: classic machine learning and small models run in parallel over large collections; not model training. Software may need rebuilding for Arm processors.'
+eosc_subcategory: Job Execution
+architecture: CPU only
+interface: Command line
+eligibility: GW4 universities (Bath, Bristol, Cardiff, Exeter) via internal processes; others via UKRI calls for UK research organisations eligible for UKRI funding. Now an NCR under UKRI access policy.
+how_to_apply: 'GW4 staff: through their own institution''s internal process. Others: UKRI calls listed at https://apply.isambard.ac.uk/ukri.'
+time_to_access: 'GW4: depends on each institution''s process. External: next UKRI call round.'
+access_mode: Peer Reviewed
+cost_band: Allocation-based
+contact: 'Bristol Centre for Supercomputing, brics-enquiries@bristol.ac.uk (GW4 users: their local support team)'
+last_checked: '2026-11-25'
+short_name: Isambard 3
+tagline: National Arm CPU supercomputer
+scientific_domain: Generic
+target_users: Researchers
+geographical_availability: United Kingdom (GW4 universities and UKRI-eligible organisations)
+language_availability: English
+order_type: Order Required
+system_type: HPC cluster
+ai_models_available: Run your own models (open-weight or self-trained)
+application_window: Periodic calls
+login_method: Institutional login
+access_type: Remote
+indicative_cost: No charge to the researcher (allocated time).
+costable_in_grants: Unsure
+server_location: UK (Bristol)
+sensitive_data: With conditions
+certifications: None found
+terms_of_use_url: https://docs.isambard.ac.uk/policies/access_terms/
+privacy_policy_url: 'Data processing terms: https://docs.isambard.ac.uk/policies/data_processing_terms/'
+energy_carbon_info: Provider describes it as one of the world's most sustainable supercomputers, six times the energy efficiency of Isambard 2.
+user_manual_url: https://docs.isambard.ac.uk
+training_url: https://docs.isambard.ac.uk/training/
+life_cycle_status: Production
+collected_by: Karina, AI-assisted (Claude)
+notes: UKRI National Compute Resource (Arm CPU) since April 2026; previously Tier-2

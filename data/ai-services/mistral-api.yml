@@ -1,0 +1,14 @@
+id: mistral-api
+name: Mistral API
+provider: Mistral AI
+version: API
+access: API
+institutional_licence: 'No'
+trains_on_inputs: 'No'
+data_location: Servers in Europe (Sweden). The EU endpoint guarantees EU processing; the global endpoint makes no location promise
+sensitive_data: With conditions
+cost: Pay per use
+model_openness: Mixed
+webpage: https://console.mistral.ai
+last_checked: '2026-11-25'
+notes: Paid API plans not used for training; the free API plan trains unless you opt out

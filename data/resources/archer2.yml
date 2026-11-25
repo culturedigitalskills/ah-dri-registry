@@ -1,0 +1,41 @@
+id: archer2
+name: ARCHER2
+provider: EPCC, University of Edinburgh
+provider_level: National
+national_programme: Tier-1
+webpage: https://www.archer2.ac.uk
+description: The UK's national CPU supercomputer, hosted at EPCC. Access ended on 20 November 2026; its successor is being built at Edinburgh.
+good_for: No longer available for new work.
+eosc_subcategory: Job Execution
+architecture: CPU only
+interface: Command line
+eligibility: No longer available (access ended 20 Nov 2026).
+how_to_apply: Closed.
+time_to_access: Not available.
+access_mode: Peer Reviewed
+cost_band: Allocation-based
+contact: ARCHER2 Service Desk, support@archer2.ac.uk
+last_checked: '2026-11-25'
+short_name: ARCHER2
+tagline: Former UK national CPU supercomputer (closed)
+scientific_domain: Generic
+target_users: Researchers
+geographical_availability: United Kingdom
+language_availability: English
+order_type: Order Required
+system_type: HPC cluster
+ai_models_available: Run your own models (open-weight or self-trained)
+application_window: Closed
+login_method: Own account
+access_type: Remote
+indicative_cost: Not available.
+costable_in_grants: 'No'
+server_location: UK (Edinburgh)
+sensitive_data: Unknown
+certifications: None found
+energy_carbon_info: Provider states ARCHER2 is net zero in operation and runs on 100% certified green electricity (service closed 20 Nov 2026).
+user_manual_url: https://docs.archer2.ac.uk
+training_url: https://www.archer2.ac.uk/training/materials
+life_cycle_status: Termination
+collected_by: Karina, AI-assisted (Claude)
+notes: National Tier-1; access ended 20 November 2026. Successor (Next National Supercomputing Service) being built at Edinburgh

@@ -1,0 +1,15 @@
+id: vllm
+name: vLLM
+type: Model runner
+organisation: vLLM (open-source project)
+webpage: https://github.com/vllm-project/vllm
+runs_on: HPC or cloud
+licence: Apache 2.0
+cost: Free
+data_stays_local: 'Yes'
+ease_of_use: Command line
+works_on:
+- isambard-ai
+- hf-inference-endpoints
+- google-cloud
+notes: Built for serving models on GPUs at scale

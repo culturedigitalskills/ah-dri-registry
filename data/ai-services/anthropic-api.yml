@@ -1,0 +1,14 @@
+id: anthropic-api
+name: Anthropic API
+provider: Anthropic
+version: API
+access: API
+institutional_licence: 'No'
+trains_on_inputs: 'No'
+data_location: Stored in the US. UK or EU processing only by using Claude through Amazon Bedrock or Google Vertex AI
+sensitive_data: With conditions
+cost: Pay per use
+model_openness: Proprietary
+webpage: https://console.anthropic.com
+last_checked: '2026-11-25'
+notes: Commercial Terms; also applies via Amazon Bedrock and Google Vertex AI

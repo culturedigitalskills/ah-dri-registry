@@ -1,0 +1,14 @@
+id: microsoft-copilot-chat
+name: Microsoft Copilot Chat
+provider: Microsoft
+version: Institutional / education
+access: App
+institutional_licence: Check locally
+trains_on_inputs: 'No'
+data_location: 'Same country or region as your university''s Microsoft 365 data (UK tenants: UK). Claude models inside Copilot run outside this boundary and are off by default for UK tenants'
+sensitive_data: With conditions
+cost: Free
+model_openness: Proprietary
+webpage: https://m365.cloud.microsoft/chat
+last_checked: '2026-11-25'
+notes: Sign in with your university account to get enterprise data protection (look for the green shield). Prompts and responses are not used to train foundation models; Microsoft acts as data processor. Full Microsoft 365 Copilot is a paid add-on licence

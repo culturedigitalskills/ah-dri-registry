@@ -1,0 +1,14 @@
+id: chatgpt-edu
+name: ChatGPT Edu
+provider: OpenAI
+version: Institutional / education
+access: App
+institutional_licence: Check locally
+trains_on_inputs: 'No'
+data_location: Storage can be set to the UK or Europe for new workspaces; processing can be set to Europe or the US. Ask your IT team what was chosen
+sensitive_data: With conditions
+cost: Paid
+model_openness: Proprietary
+webpage: https://openai.com/index/introducing-chatgpt-edu/
+last_checked: '2026-11-25'
+notes: 'Licensed by the institution. UK examples: Oxford and Kent offer it free to all staff and students'

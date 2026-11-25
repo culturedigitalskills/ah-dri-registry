@@ -1,0 +1,8 @@
+id: lm-studio
+name: LM Studio
+type: Model runner + library
+organisation: LM Studio
+webpage: https://lmstudio.ai
+runs_on: Own computer
+data_stays_local: 'Yes'
+ease_of_use: Desktop app

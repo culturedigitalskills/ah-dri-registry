@@ -1,0 +1,499 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://culturedigitalskills.github.io/ah-dri-registry/api/v1/schema/resources.schema.json",
+  "title": "Resources",
+  "description": "Compute services researchers can use (whose hardware runs the work).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "provider",
+    "provider_level",
+    "last_checked"
+  ],
+  "properties": {
+    "id": {
+      "title": "ID",
+      "description": "Short, permanent identifier used in file names and API URLs: lowercase letters, numbers and hyphens, e.g. isambard-ai. Do not change it once published.",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "name": {
+      "title": "Resource name",
+      "description": "Full name of the service",
+      "type": "string",
+      "minLength": 1,
+      "x-eosc": "name",
+      "x-core": true
+    },
+    "provider": {
+      "title": "Provider organisation",
+      "description": "Organisation that runs it",
+      "type": "string",
+      "minLength": 1,
+      "x-eosc": "resourceOrganisation",
+      "x-core": true
+    },
+    "provider_level": {
+      "title": "Provider level",
+      "description": "Who offers it",
+      "type": "string",
+      "enum": [
+        "Institutional",
+        "Regional",
+        "National",
+        "Commercial",
+        "International"
+      ],
+      "x-core": true
+    },
+    "national_programme": {
+      "title": "National programme",
+      "description": "Which UK national programme the service belongs to, which decides the access route. NCRs replace the old Tier-2 services",
+      "type": "string",
+      "enum": [
+        "AIRR",
+        "NCR",
+        "AIRR + NCR",
+        "Tier-1",
+        "Tier-2 (legacy)",
+        "Other national service",
+        "Not applicable"
+      ]
+    },
+    "webpage": {
+      "title": "Webpage",
+      "description": "Main URL",
+      "type": "string",
+      "pattern": "^https?://\\S+$",
+      "x-eosc": "webpage",
+      "x-core": true
+    },
+    "description": {
+      "title": "Description",
+      "description": "Two or three sentences in plain language",
+      "type": "string",
+      "minLength": 1,
+      "x-eosc": "description",
+      "x-core": true
+    },
+    "good_for": {
+      "title": "Good for",
+      "description": "Typical arts and humanities tasks it suits, e.g. transcribing audio, handwriting recognition, image classification",
+      "type": "string",
+      "minLength": 1,
+      "x-core": true
+    },
+    "eosc_subcategory": {
+      "title": "EOSC subcategory",
+      "description": "Type of compute service. The EOSC category is always Compute for this collection",
+      "type": "string",
+      "enum": [
+        "Virtual Machine Management",
+        "Container Management",
+        "Job Execution",
+        "Workload Management",
+        "Orchestration",
+        "Serverless Applications Repository",
+        "Other"
+      ],
+      "x-eosc": "categories",
+      "x-core": true
+    },
+    "architecture": {
+      "title": "Architecture",
+      "description": "Type of computing",
+      "type": "string",
+      "enum": [
+        "CPU only",
+        "CPU + GPU",
+        "Other accelerator",
+        "Unknown"
+      ],
+      "x-core": true
+    },
+    "interface": {
+      "title": "Interface",
+      "description": "How researchers use it",
+      "type": "string",
+      "enum": [
+        "Web interface",
+        "Notebook",
+        "Command line",
+        "Command line + web portal"
+      ],
+      "x-core": true
+    },
+    "eligibility": {
+      "title": "Eligibility",
+      "description": "Who can use it, e.g. staff at member institutions, any UK researcher, early career, unaffiliated",
+      "type": "string",
+      "minLength": 1,
+      "x-core": true
+    },
+    "how_to_apply": {
+      "title": "How to apply",
+      "description": "Steps in one line, plus URL",
+      "type": "string",
+      "minLength": 1,
+      "x-eosc": "order",
+      "x-core": true
+    },
+    "time_to_access": {
+      "title": "Time to access",
+      "description": "How long until you can use it, e.g. same day, 2 weeks, next allocation round",
+      "type": "string",
+      "minLength": 1,
+      "x-core": true
+    },
+    "access_mode": {
+      "title": "Access mode",
+      "description": "Basis on which access is granted",
+      "type": "string",
+      "enum": [
+        "Free",
+        "Free Conditionally",
+        "Peer Reviewed",
+        "Paid",
+        "Other"
+      ],
+      "x-eosc": "accessModes",
+      "x-core": true
+    },
+    "cost_band": {
+      "title": "Cost band",
+      "description": "How it is paid for",
+      "type": "string",
+      "enum": [
+        "Free at point of use",
+        "Allocation-based",
+        "Internal recharge",
+        "Commercial",
+        "Mixed",
+        "Unknown"
+      ],
+      "x-core": true
+    },
+    "contact": {
+      "title": "Contact for researchers",
+      "description": "Team name and email that researchers should contact for help or access. Use team addresses, not named individuals",
+      "type": "string",
+      "minLength": 1,
+      "x-eosc": "publicContacts",
+      "x-core": true
+    },
+    "last_checked": {
+      "title": "Last checked",
+      "description": "Date the entry was verified",
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "x-core": true
+    },
+    "short_name": {
+      "title": "Short name",
+      "description": "Abbreviation",
+      "type": "string",
+      "minLength": 1,
+      "x-eosc": "abbreviation"
+    },
+    "tagline": {
+      "title": "One-line summary",
+      "description": "Tagline",
+      "type": "string",
+      "minLength": 1,
+      "x-eosc": "tagline"
+    },
+    "logo_url": {
+      "title": "Logo URL",
+      "description": "Link to the provider's logo (do not copy logos into this repository)",
+      "type": "string",
+      "pattern": "^https?://\\S+$",
+      "x-eosc": "logo"
+    },
+    "scientific_domain": {
+      "title": "Scientific domain",
+      "description": "Main domain served; list others in Notes",
+      "type": "string",
+      "enum": [
+        "Humanities",
+        "Social Sciences",
+        "Generic",
+        "Natural Sciences",
+        "Engineering & Technology",
+        "Medical & Health Sciences",
+        "Agricultural Sciences",
+        "Other"
+      ],
+      "x-eosc": "scientificDomains"
+    },
+    "target_users": {
+      "title": "Target users",
+      "description": "Main user group; list others in Notes",
+      "type": "string",
+      "enum": [
+        "Researchers",
+        "Research Groups",
+        "Research Projects",
+        "Research Communities",
+        "Research Networks",
+        "Research Organisations",
+        "Students",
+        "Research Managers",
+        "Research Infrastructure Managers",
+        "Resource Managers",
+        "Provider Managers",
+        "Providers",
+        "Businesses",
+        "Innovators",
+        "Funders",
+        "Policy Makers",
+        "Publishers",
+        "Other"
+      ],
+      "x-eosc": "targetUsers"
+    },
+    "geographical_availability": {
+      "title": "Geographical availability",
+      "description": "Where users must be based",
+      "type": "string",
+      "minLength": 1,
+      "x-eosc": "geographicalAvailabilities"
+    },
+    "language_availability": {
+      "title": "Language availability",
+      "description": "Languages the service is offered in",
+      "type": "string",
+      "minLength": 1,
+      "x-eosc": "languageAvailabilities"
+    },
+    "public_contact_email": {
+      "title": "Public contact email",
+      "description": "Public contact for the service (EOSC admin field)",
+      "type": "string",
+      "pattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$",
+      "x-eosc": "publicContacts"
+    },
+    "helpdesk_email": {
+      "title": "Helpdesk email",
+      "description": "Support address (EOSC admin field)",
+      "type": "string",
+      "pattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$",
+      "x-eosc": "helpdeskEmail"
+    },
+    "security_contact_email": {
+      "title": "Security contact email",
+      "description": "EOSC admin field",
+      "type": "string",
+      "pattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$",
+      "x-eosc": "securityContactEmail"
+    },
+    "trl": {
+      "title": "Technology readiness level",
+      "description": "EOSC admin field",
+      "type": "string",
+      "enum": [
+        "1 - basic principles observed",
+        "2 - technology concept formulated",
+        "3 - experimental proof of concept",
+        "4 - technology validated in lab",
+        "5 - technology validated in relevant environment",
+        "6 - technology demonstrated in relevant environment",
+        "7 - system prototype demonstration in operational environment",
+        "8 - system complete and qualified",
+        "9 - actual system proven in operational environment"
+      ],
+      "x-eosc": "trl"
+    },
+    "order_type": {
+      "title": "Order type",
+      "description": "How access is ordered",
+      "type": "string",
+      "enum": [
+        "Fully Open Access",
+        "Open Access",
+        "Order Required",
+        "Other"
+      ],
+      "x-eosc": "orderType"
+    },
+    "system_type": {
+      "title": "System type",
+      "description": "Kind of service",
+      "type": "string",
+      "enum": [
+        "HPC cluster",
+        "Cloud virtual machines",
+        "Containers",
+        "Notebook service",
+        "Dedicated AI system",
+        "Other"
+      ]
+    },
+    "ai_models_available": {
+      "title": "AI models available",
+      "description": "Whether the service offers ready-to-use AI models, or you bring and run your own",
+      "type": "string",
+      "enum": [
+        "Run your own models (open-weight or self-trained)",
+        "Run your own + hosted models (paid)",
+        "Run your own + hosted models (included)",
+        "Hosted models only",
+        "None",
+        "Unknown"
+      ]
+    },
+    "application_window": {
+      "title": "Application window",
+      "description": "Can a researcher apply now? Steps and timing details go in How to apply",
+      "type": "string",
+      "enum": [
+        "Open all year",
+        "Periodic calls",
+        "Not yet published",
+        "Closed",
+        "Not applicable (sign up any time)"
+      ]
+    },
+    "login_method": {
+      "title": "Login method",
+      "description": "How users sign in",
+      "type": "string",
+      "enum": [
+        "Institutional login",
+        "eduGAIN",
+        "Own account",
+        "Other"
+      ]
+    },
+    "access_type": {
+      "title": "Access type",
+      "description": "How users reach it",
+      "type": "string",
+      "enum": [
+        "Remote",
+        "Virtual",
+        "Physical",
+        "Mail-In",
+        "Other"
+      ],
+      "x-eosc": "accessTypes"
+    },
+    "indicative_cost": {
+      "title": "Indicative cost",
+      "description": "Rough price, e.g. £ per GPU-hour or core-hour",
+      "type": "string",
+      "minLength": 1
+    },
+    "costable_in_grants": {
+      "title": "Can be costed into grants",
+      "description": "Whether funders accept it as a project cost. Rules vary by funder and scheme, so confirm with your research office",
+      "type": "string",
+      "enum": [
+        "Usually, check funder rules",
+        "No",
+        "Unsure"
+      ]
+    },
+    "pricing_url": {
+      "title": "Pricing URL",
+      "description": "Link to the current price list. Only for services that charge",
+      "type": "string",
+      "pattern": "^https?://\\S+$",
+      "x-eosc": "pricing"
+    },
+    "server_location": {
+      "title": "Server location",
+      "description": "Country where data is processed",
+      "type": "string",
+      "minLength": 1,
+      "x-eosc": "resourceGeographicLocations"
+    },
+    "sensitive_data": {
+      "title": "Suitable for sensitive data",
+      "description": "Personal or restricted material. Only what the service itself states counts",
+      "type": "string",
+      "enum": [
+        "Yes",
+        "No",
+        "With conditions",
+        "Unknown"
+      ]
+    },
+    "certifications": {
+      "title": "Certifications",
+      "description": "e.g. ISO 27001",
+      "type": "string",
+      "minLength": 1,
+      "x-eosc": "certifications"
+    },
+    "terms_of_use_url": {
+      "title": "Terms of use URL",
+      "description": "Link to terms of use",
+      "type": "string",
+      "pattern": "^https?://\\S+$",
+      "x-eosc": "termsOfUse"
+    },
+    "privacy_policy_url": {
+      "title": "Privacy policy",
+      "description": "Link to privacy policy (a short note may accompany the link)",
+      "type": "string",
+      "minLength": 1,
+      "x-eosc": "privacyPolicy"
+    },
+    "energy_carbon_info": {
+      "title": "Energy or carbon information",
+      "description": "Published environmental information, or Not published",
+      "type": "string",
+      "minLength": 1
+    },
+    "user_manual_url": {
+      "title": "User manual URL",
+      "description": "Link to user documentation",
+      "type": "string",
+      "pattern": "^https?://\\S+$",
+      "x-eosc": "userManual"
+    },
+    "training_url": {
+      "title": "Training URL",
+      "description": "Link to training material",
+      "type": "string",
+      "pattern": "^https?://\\S+$",
+      "x-eosc": "trainingInformation"
+    },
+    "life_cycle_status": {
+      "title": "Life cycle status",
+      "description": "Phase of the service",
+      "type": "string",
+      "enum": [
+        "Production",
+        "Operation",
+        "Beta",
+        "Alpha",
+        "Implementation",
+        "Planned",
+        "Preparation",
+        "Design",
+        "Discovery",
+        "Concept",
+        "In containment",
+        "Retirement",
+        "Termination",
+        "Other"
+      ],
+      "x-eosc": "lifeCycleStatus"
+    },
+    "collected_by": {
+      "title": "Collected by",
+      "description": "Who filled in or last updated the entry, e.g. 'Your Name' or 'Your Name, AI-assisted (tool)'",
+      "type": "string",
+      "minLength": 1
+    },
+    "notes": {
+      "title": "Notes",
+      "description": "Anything unclear or missing; extra target users or domains. Mark unverified facts with [to be confirmed]",
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

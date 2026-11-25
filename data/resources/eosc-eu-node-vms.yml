@@ -1,0 +1,42 @@
+id: eosc-eu-node-vms
+name: 'EOSC EU Node: virtual machines'
+provider: European Commission
+provider_level: International
+national_programme: Not applicable
+webpage: https://open-science-cloud.ec.europa.eu/services
+description: Virtual machines on the European Commission's EOSC EU Node, paid for with free virtual credits. Log in through eduGAIN.
+good_for: Small projects that need a server of their own, such as hosting a tool or running a script for weeks.
+eosc_subcategory: Virtual Machine Management
+architecture: CPU + GPU
+interface: Web interface
+eligibility: 'eduGAIN users from the EU27 and Horizon Europe Associated Countries get roles above Observer (faculty: Investigator; staff: Collaborator). UK can access.'
+how_to_apply: Log in at https://open-science-cloud.ec.europa.eu with your institutional login (eduGAIN); access level is set automatically.
+time_to_access: Same day (log in with eduGAIN).
+access_mode: Free Conditionally
+cost_band: Free at point of use
+contact: EOSC EU Node Helpdesk
+last_checked: '2026-11-25'
+short_name: EOSC EU Node VMs
+tagline: Free virtual machines for European researchers
+scientific_domain: Generic
+target_users: Researchers
+geographical_availability: EU27 and Horizon Europe Associated Countries
+language_availability: English
+order_type: Open Access
+system_type: Cloud virtual machines
+ai_models_available: Run your own models (open-weight or self-trained)
+application_window: Not applicable (sign up any time)
+login_method: eduGAIN
+access_type: Virtual
+indicative_cost: 'No charge: free virtual credits.'
+costable_in_grants: 'No'
+server_location: EU (check each service)
+sensitive_data: Unknown
+certifications: None found
+terms_of_use_url: https://open-science-cloud.ec.europa.eu/support/acceptable-use-policy
+energy_carbon_info: Not published
+user_manual_url: https://open-science-cloud.ec.europa.eu/support/documentation/fo-user-guide
+training_url: https://openplato.eu/eosceunode
+life_cycle_status: Production
+collected_by: Karina, AI-assisted (Claude)
+notes: Credit-based access via eduGAIN; small to medium scale

@@ -1,0 +1,43 @@
+id: aws
+name: Amazon Web Services (AWS)
+provider: Amazon Web Services
+provider_level: Commercial
+national_programme: Not applicable
+webpage: https://aws.amazon.com
+description: 'Amazon''s cloud platform: rent virtual machines, GPUs and storage by the hour, plus hosted AI models through paid services.'
+good_for: Funded projects that need flexible, on-demand GPUs. Costs must be budgeted in advance.
+eosc_subcategory: Virtual Machine Management
+architecture: CPU + GPU
+interface: Command line + web portal
+eligibility: Anyone with an account and payment method; check institutional agreements.
+how_to_apply: Create an account and add a payment method; first check your institution's cloud agreements and research credit schemes.
+time_to_access: Same day once an account and payment method are set up.
+access_mode: Paid
+cost_band: Commercial
+contact: Vendor support; your institution's cloud or IT team for agreements
+last_checked: '2026-11-25'
+short_name: AWS
+tagline: Amazon's on-demand cloud computing
+scientific_domain: Generic
+target_users: Researchers
+geographical_availability: Worldwide
+language_availability: English and many other languages
+order_type: Open Access
+system_type: Cloud virtual machines
+ai_models_available: Run your own + hosted models (paid)
+application_window: Not applicable (sign up any time)
+login_method: Own account
+access_type: Virtual
+indicative_cost: On-demand H100 about $6.88 per GPU-hour (US list price, Oct 2026); smaller GPUs much cheaper. UK prices vary by region.
+costable_in_grants: Unsure
+pricing_url: https://aws.amazon.com/ec2/pricing/on-demand/
+server_location: User chooses a region, including UK (London)
+sensitive_data: With conditions
+certifications: ISO 27001, SOC 2 and others (see provider compliance pages)
+terms_of_use_url: https://aws.amazon.com/service-terms/
+privacy_policy_url: https://aws.amazon.com/privacy/
+energy_carbon_info: Company-level sustainability reports only; account-level Customer Carbon Footprint Tool; no per-job figures
+user_manual_url: https://docs.aws.amazon.com
+training_url: https://skillbuilder.aws
+life_cycle_status: Production
+collected_by: Karina, AI-assisted (Claude)

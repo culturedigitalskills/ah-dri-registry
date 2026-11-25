@@ -1,0 +1,111 @@
+# Field definitions for the three collections in the registry.
+#
+# This file, together with data/vocabularies.yml, is the single source for:
+#   - schema/*.schema.json  (validation)
+#   - .pages.yml            (the Pages CMS editing form)
+# Run `python scripts/generate.py` after changing either file.
+#
+# Keys per field:
+#   key:         field name in the YAML files and the API
+#   label:       what editors see
+#   type:        id | string | text | url | email | date | select | reference
+#   vocab:       for select fields, the list in data/vocabularies.yml
+#   collection:  for reference fields, the collection referred to
+#   multiple:    for reference fields, allow several values
+#   required:    the build fails if missing
+#   core:        expected for a complete entry; the build reports it if missing
+#   eosc:        matching EOSC Service Profile v5.0 element, if any
+#   description: help text shown in the editing form
+
+resources:
+  label: Resources
+  description: Compute services researchers can use (whose hardware runs the work).
+  folder: data/resources
+  fields:
+    - {key: id, label: ID, type: id, required: true, description: "Short, permanent identifier used in file names and API URLs: lowercase letters, numbers and hyphens, e.g. isambard-ai. Do not change it once published."}
+    - {key: name, label: Resource name, type: string, required: true, core: true, eosc: name, description: Full name of the service}
+    - {key: provider, label: Provider organisation, type: string, required: true, core: true, eosc: resourceOrganisation, description: Organisation that runs it}
+    - {key: provider_level, label: Provider level, type: select, vocab: provider_level, required: true, core: true, description: Who offers it}
+    - {key: national_programme, label: National programme, type: select, vocab: national_programme, description: "Which UK national programme the service belongs to, which decides the access route. NCRs replace the old Tier-2 services"}
+    - {key: webpage, label: Webpage, type: url, core: true, eosc: webpage, description: Main URL}
+    - {key: description, label: Description, type: text, core: true, eosc: description, description: Two or three sentences in plain language}
+    - {key: good_for, label: Good for, type: text, core: true, description: "Typical arts and humanities tasks it suits, e.g. transcribing audio, handwriting recognition, image classification"}
+    - {key: eosc_subcategory, label: EOSC subcategory, type: select, vocab: eosc_subcategory, core: true, eosc: categories, description: Type of compute service. The EOSC category is always Compute for this collection}
+    - {key: architecture, label: Architecture, type: select, vocab: architecture, core: true, description: Type of computing}
+    - {key: interface, label: Interface, type: select, vocab: interface, core: true, description: How researchers use it}
+    - {key: eligibility, label: Eligibility, type: text, core: true, description: "Who can use it, e.g. staff at member institutions, any UK researcher, early career, unaffiliated"}
+    - {key: how_to_apply, label: How to apply, type: text, core: true, eosc: order, description: "Steps in one line, plus URL"}
+    - {key: time_to_access, label: Time to access, type: string, core: true, description: "How long until you can use it, e.g. same day, 2 weeks, next allocation round"}
+    - {key: access_mode, label: Access mode, type: select, vocab: access_mode, core: true, eosc: accessModes, description: Basis on which access is granted}
+    - {key: cost_band, label: Cost band, type: select, vocab: cost_band, core: true, description: How it is paid for}
+    - {key: contact, label: Contact for researchers, type: string, core: true, eosc: publicContacts, description: "Team name and email that researchers should contact for help or access. Use team addresses, not named individuals"}
+    - {key: last_checked, label: Last checked, type: date, required: true, core: true, description: Date the entry was verified}
+    - {key: short_name, label: Short name, type: string, eosc: abbreviation, description: Abbreviation}
+    - {key: tagline, label: One-line summary, type: string, eosc: tagline, description: Tagline}
+    - {key: logo_url, label: Logo URL, type: url, eosc: logo, description: "Link to the provider's logo (do not copy logos into this repository)"}
+    - {key: scientific_domain, label: Scientific domain, type: select, vocab: scientific_domain, eosc: scientificDomains, description: Main domain served; list others in Notes}
+    - {key: target_users, label: Target users, type: select, vocab: target_users, eosc: targetUsers, description: Main user group; list others in Notes}
+    - {key: geographical_availability, label: Geographical availability, type: string, eosc: geographicalAvailabilities, description: Where users must be based}
+    - {key: language_availability, label: Language availability, type: string, eosc: languageAvailabilities, description: Languages the service is offered in}
+    - {key: public_contact_email, label: Public contact email, type: email, eosc: publicContacts, description: Public contact for the service (EOSC admin field)}
+    - {key: helpdesk_email, label: Helpdesk email, type: email, eosc: helpdeskEmail, description: Support address (EOSC admin field)}
+    - {key: security_contact_email, label: Security contact email, type: email, eosc: securityContactEmail, description: EOSC admin field}
+    - {key: trl, label: Technology readiness level, type: select, vocab: trl, eosc: trl, description: EOSC admin field}
+    - {key: order_type, label: Order type, type: select, vocab: order_type, eosc: orderType, description: How access is ordered}
+    - {key: system_type, label: System type, type: select, vocab: system_type, description: Kind of service}
+    - {key: ai_models_available, label: AI models available, type: select, vocab: ai_models_available, description: "Whether the service offers ready-to-use AI models, or you bring and run your own"}
+    - {key: application_window, label: Application window, type: select, vocab: application_window, description: "Can a researcher apply now? Steps and timing details go in How to apply"}
+    - {key: login_method, label: Login method, type: select, vocab: login_method, description: How users sign in}
+    - {key: access_type, label: Access type, type: select, vocab: access_type, eosc: accessTypes, description: How users reach it}
+    - {key: indicative_cost, label: Indicative cost, type: text, description: "Rough price, e.g. £ per GPU-hour or core-hour"}
+    - {key: costable_in_grants, label: Can be costed into grants, type: select, vocab: grant_costing, description: "Whether funders accept it as a project cost. Rules vary by funder and scheme, so confirm with your research office"}
+    - {key: pricing_url, label: Pricing URL, type: url, eosc: pricing, description: "Link to the current price list. Only for services that charge"}
+    - {key: server_location, label: Server location, type: string, eosc: resourceGeographicLocations, description: Country where data is processed}
+    - {key: sensitive_data, label: Suitable for sensitive data, type: select, vocab: sensitive_data, description: "Personal or restricted material. Only what the service itself states counts"}
+    - {key: certifications, label: Certifications, type: string, eosc: certifications, description: e.g. ISO 27001}
+    - {key: terms_of_use_url, label: Terms of use URL, type: url, eosc: termsOfUse, description: Link to terms of use}
+    - {key: privacy_policy_url, label: Privacy policy, type: string, eosc: privacyPolicy, description: Link to privacy policy (a short note may accompany the link)}
+    - {key: energy_carbon_info, label: Energy or carbon information, type: text, description: "Published environmental information, or Not published"}
+    - {key: user_manual_url, label: User manual URL, type: url, eosc: userManual, description: Link to user documentation}
+    - {key: training_url, label: Training URL, type: url, eosc: trainingInformation, description: Link to training material}
+    - {key: life_cycle_status, label: Life cycle status, type: select, vocab: life_cycle_status, eosc: lifeCycleStatus, description: Phase of the service}
+    - {key: collected_by, label: Collected by, type: string, description: "Who filled in or last updated the entry, e.g. 'Your Name' or 'Your Name, AI-assisted (tool)'"}
+    - {key: notes, label: Notes, type: text, description: "Anything unclear or missing; extra target users or domains. Mark unverified facts with [to be confirmed]"}
+
+tools:
+  label: Tools and models
+  description: Software and model libraries researchers run themselves.
+  folder: data/tools
+  fields:
+    - {key: id, label: ID, type: id, required: true, description: "Short, permanent identifier: lowercase letters, numbers and hyphens, e.g. llama-cpp"}
+    - {key: name, label: Name, type: string, required: true, core: true}
+    - {key: type, label: Type, type: select, vocab: tool_type, required: true, core: true}
+    - {key: organisation, label: Organisation, type: string, core: true}
+    - {key: webpage, label: Webpage, type: url, core: true}
+    - {key: runs_on, label: Runs on, type: select, vocab: runs_on, core: true}
+    - {key: licence, label: Licence, type: string, core: true}
+    - {key: cost, label: Cost, type: select, vocab: tool_cost, core: true}
+    - {key: data_stays_local, label: Data stays local, type: select, vocab: data_stays_local}
+    - {key: ease_of_use, label: Ease of use, type: select, vocab: ease_of_use}
+    - {key: works_on, label: Works on (resources), type: reference, collection: resources, multiple: true, description: "Resources whose own documentation supports or documents this tool. Leave empty if it would only 'probably' work"}
+    - {key: notes, label: Notes, type: text}
+
+ai_services:
+  label: AI services
+  description: Products whose main purpose is chatting with or calling an AI model, one entry per version (free, institutional, API), because data terms differ by version.
+  folder: data/ai-services
+  fields:
+    - {key: id, label: ID, type: id, required: true, description: "Short, permanent identifier: lowercase letters, numbers and hyphens, e.g. chatgpt-edu"}
+    - {key: name, label: Name, type: string, required: true, core: true}
+    - {key: provider, label: Provider, type: string, required: true, core: true}
+    - {key: version, label: Version described, type: select, vocab: ai_version, required: true, core: true, description: Data terms differ by version, so each version is its own entry}
+    - {key: access, label: Access, type: select, vocab: ai_access, core: true}
+    - {key: institutional_licence, label: Institutional licence, type: select, vocab: institutional_licence, core: true}
+    - {key: trains_on_inputs, label: Trains on inputs by default, type: select, vocab: trains_on_inputs, core: true}
+    - {key: data_location, label: Data location, type: text, core: true}
+    - {key: sensitive_data, label: Suitable for sensitive data, type: select, vocab: sensitive_data, core: true}
+    - {key: cost, label: Cost, type: select, vocab: ai_cost, core: true}
+    - {key: model_openness, label: Model openness, type: select, vocab: model_openness}
+    - {key: webpage, label: Webpage, type: url, core: true}
+    - {key: last_checked, label: Last checked, type: date, required: true, core: true}
+    - {key: notes, label: Notes, type: text}

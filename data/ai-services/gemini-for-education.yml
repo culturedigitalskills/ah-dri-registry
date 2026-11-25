@@ -1,0 +1,14 @@
+id: gemini-for-education
+name: Gemini for Education
+provider: Google
+version: Institutional / education
+access: App
+institutional_licence: Check locally
+trains_on_inputs: 'No'
+data_location: 'Education Standard and Plus can keep stored data in Europe or the US (storage only, not processing). Education Fundamentals: no choice. No UK option'
+sensitive_data: With conditions
+cost: Free
+model_openness: Proprietary
+webpage: https://edu.google.com/intl/en/gemini-built-for-education-higher-ed/
+last_checked: '2026-11-25'
+notes: Free for institutions that sign up to Google for Education, even if they use another office suite; includes NotebookLM. Chats are not human-reviewed or used to train models. Google AI Pro for Education is a paid add-on

@@ -1,0 +1,14 @@
+id: claude-for-education
+name: Claude for Education
+provider: Anthropic
+version: Institutional / education
+access: App
+institutional_licence: Check locally
+trains_on_inputs: 'No'
+data_location: Stored in the US; no UK or EU option
+sensitive_data: With conditions
+cost: Paid
+model_openness: Proprietary
+webpage: https://www.anthropic.com/news/introducing-claude-for-education
+last_checked: '2026-11-25'
+notes: 'Under Anthropic''s Commercial Terms. UK example: LSE'

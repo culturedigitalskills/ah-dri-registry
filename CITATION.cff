@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this registry, please cite it as below."
+type: dataset
+title: "A&H DRI Registry: compute, tools and AI services for UK arts and humanities researchers"
+authors:
+  - name: "DRI community contributors"
+repository-code: "https://github.com/culturedigitalskills/ah-dri-registry"
+url: "https://culturedigitalskills.github.io/ah-dri-registry/"
+abstract: >-
+  An open registry of the compute, tools and AI services that UK arts and
+  humanities researchers can use, with access routes, costs and data terms.
+  Fields follow the EOSC Service Profile v5.0 where possible.
+keywords:
+  - digital research infrastructure
+  - arts and humanities
+  - research computing
+  - EOSC
+  - registry
+license: CC-BY-4.0
+version: "0.1.0"
+date-released: "2026-11-25"

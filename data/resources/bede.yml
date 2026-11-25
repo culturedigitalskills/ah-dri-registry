@@ -1,0 +1,40 @@
+id: bede
+name: Bede
+provider: Durham University (N8 CIR)
+provider_level: Institutional
+national_programme: Tier-2 (legacy)
+webpage: https://n8cir.org.uk/bede/
+description: N8 universities' GPU supercomputer at Durham (IBM Power9 nodes with NVIDIA V100 GPUs, plus a few Grace Hopper nodes). Listed as end of life.
+good_for: GPU work for researchers at N8 universities while it remains open. Its GPUs are older.
+eosc_subcategory: Job Execution
+architecture: CPU + GPU
+interface: Command line
+eligibility: Researchers at N8 universities; a separate allocation for non-N8 EPSRC-funded researchers. Service listed as end of life.
+how_to_apply: Project PI or supervisor completes the N8 CIR Bede project application form (https://n8cir.org.uk/bede/); researchers are then added to the project.
+time_to_access: Not published (PI application reviewed by N8 CIR).
+access_mode: Free Conditionally
+cost_band: Free at point of use
+contact: Durham Advanced Research Computing, arc.admin@durham.ac.uk
+last_checked: '2026-11-25'
+short_name: Bede
+tagline: N8 universities' GPU supercomputer (end of life)
+scientific_domain: Generic
+target_users: Researchers
+geographical_availability: United Kingdom (mainly N8 universities in the north of England)
+language_availability: English
+order_type: Order Required
+system_type: HPC cluster
+ai_models_available: Run your own models (open-weight or self-trained)
+application_window: Open all year
+access_type: Remote
+indicative_cost: No charge to N8 researchers.
+costable_in_grants: 'No'
+server_location: UK (Durham)
+sensitive_data: Unknown
+certifications: None found
+energy_carbon_info: Not published
+user_manual_url: https://bede-documentation.readthedocs.io/en/latest/
+training_url: https://n8cir.org.uk/events/event-resource/ibm-training-bede
+life_cycle_status: Retirement
+collected_by: Karina, AI-assisted (Claude)
+notes: Tier-2 service; listed as end of life. N8 CIR research priorities include Digital Humanities.

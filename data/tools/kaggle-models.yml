@@ -1,0 +1,13 @@
+id: kaggle-models
+name: Kaggle Models
+type: Model library
+organisation: Google (Kaggle)
+webpage: https://www.kaggle.com/models
+runs_on: Any
+licence: Varies by model
+cost: Free
+data_stays_local: 'Yes'
+ease_of_use: Web interface
+works_on:
+- kaggle
+notes: Each model has its own licence

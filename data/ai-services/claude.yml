@@ -1,0 +1,14 @@
+id: claude
+name: Claude
+provider: Anthropic
+version: Free consumer
+access: App
+institutional_licence: 'No'
+trains_on_inputs: 'Yes'
+data_location: US [to be confirmed]
+sensitive_data: 'No'
+cost: Free + paid tiers
+model_openness: Proprietary
+webpage: https://claude.ai
+last_checked: '2026-11-25'
+notes: Covers Free, Pro and Max personal plans. Users choose a training setting at sign-up; turn off 'Help improve Claude' in Settings > Privacy. Data kept five years if training is allowed, 30 days if not

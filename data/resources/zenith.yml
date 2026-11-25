@@ -1,0 +1,41 @@
+id: zenith
+name: Zenith
+provider: University of Cambridge
+provider_level: National
+national_programme: AIRR + NCR
+webpage: https://www.csd3.cam.ac.uk/d-w-n
+description: Cambridge's AI supercomputer with AMD Instinct MI355X GPUs, launched in June 2026 as the upgrade of Dawn. Part of AIRR and a UKRI National Compute Resource.
+good_for: Large AI and data-driven projects, such as fine-tuning and running models on large collections. AMD GPUs may need some software adapted.
+eosc_subcategory: Job Execution
+architecture: CPU + GPU
+eligibility: Via AIRR access routes (UK-based researchers, academia and SMEs). NCR access policy set by UKRI; routes not yet published.
+how_to_apply: 'Apply through the AIRRPortal (Rapid Access or Gateway route): https://portal-airr.isambard.ac.uk. NCR routes still to be published by UKRI.'
+time_to_access: 'Via AIRR: applications accepted all year; decision time not published. NCR route not yet known.'
+access_mode: Peer Reviewed
+cost_band: Allocation-based
+contact: 'Applications: airr@ukri.org. Service: Cambridge Research Computing Services, support@hpc.cam.ac.uk'
+last_checked: '2026-11-25'
+short_name: Zenith
+tagline: Cambridge AI supercomputer with AMD GPUs
+scientific_domain: Generic
+target_users: Researchers
+geographical_availability: United Kingdom
+language_availability: English
+order_type: Order Required
+system_type: Dedicated AI system
+ai_models_available: Run your own models (open-weight or self-trained)
+application_window: Open all year
+login_method: Institutional login
+access_type: Remote
+indicative_cost: 'No charge to the researcher: GPU hours awarded through AIRR.'
+costable_in_grants: 'No'
+server_location: UK (Cambridge)
+sensitive_data: Unknown
+certifications: None found
+privacy_policy_url: 'AIRR portal: https://portal-airr.isambard.ac.uk/privacy/'
+energy_carbon_info: Not published
+user_manual_url: https://docs.hpc.cam.ac.uk/user-guide/zenith-quickstart.html
+training_url: https://www.hpc.cam.ac.uk/training-consultancy
+life_cycle_status: Production
+collected_by: Karina, AI-assisted (Claude)
+notes: Part of AIRR and also a UKRI National Compute Resource (GPU); upgrade of Dawn, launched June 2026

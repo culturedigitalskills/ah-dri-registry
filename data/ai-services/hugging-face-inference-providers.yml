@@ -1,0 +1,14 @@
+id: hugging-face-inference-providers
+name: Hugging Face Inference Providers
+provider: Hugging Face
+version: API
+access: API
+institutional_licence: 'No'
+trains_on_inputs: Unknown
+data_location: Depends on the third-party provider [to be confirmed]
+sensitive_data: Unknown
+cost: Free + paid tiers
+model_openness: Open-weight
+webpage: https://huggingface.co/docs/inference-providers
+last_checked: '2026-11-25'
+notes: Call many open models through one API without choosing hardware. Requests go to third-party providers, whose data terms differ. Renting dedicated hardware is listed as Hugging Face Inference Endpoints on the Resources tab

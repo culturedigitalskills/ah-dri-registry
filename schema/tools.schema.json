@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://culturedigitalskills.github.io/ah-dri-registry/api/v1/schema/tools.schema.json",
+  "title": "Tools and models",
+  "description": "Software and model libraries researchers run themselves.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "type"
+  ],
+  "properties": {
+    "id": {
+      "title": "ID",
+      "description": "Short, permanent identifier: lowercase letters, numbers and hyphens, e.g. llama-cpp",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string",
+      "minLength": 1,
+      "x-core": true
+    },
+    "type": {
+      "title": "Type",
+      "type": "string",
+      "enum": [
+        "Model runner",
+        "Model library",
+        "Model runner + library",
+        "User interface",
+        "Other"
+      ],
+      "x-core": true
+    },
+    "organisation": {
+      "title": "Organisation",
+      "type": "string",
+      "minLength": 1,
+      "x-core": true
+    },
+    "webpage": {
+      "title": "Webpage",
+      "type": "string",
+      "pattern": "^https?://\\S+$",
+      "x-core": true
+    },
+    "runs_on": {
+      "title": "Runs on",
+      "type": "string",
+      "enum": [
+        "Own computer",
+        "Own computer or HPC",
+        "HPC or cloud",
+        "Cloud only",
+        "Any"
+      ],
+      "x-core": true
+    },
+    "licence": {
+      "title": "Licence",
+      "type": "string",
+      "minLength": 1,
+      "x-core": true
+    },
+    "cost": {
+      "title": "Cost",
+      "type": "string",
+      "enum": [
+        "Free",
+        "Free + paid tiers",
+        "Paid",
+        "Unknown"
+      ],
+      "x-core": true
+    },
+    "data_stays_local": {
+      "title": "Data stays local",
+      "type": "string",
+      "enum": [
+        "Yes",
+        "No",
+        "Optional",
+        "Unknown"
+      ]
+    },
+    "ease_of_use": {
+      "title": "Ease of use",
+      "type": "string",
+      "enum": [
+        "Desktop app",
+        "Web interface",
+        "Command line",
+        "Mixed"
+      ]
+    },
+    "works_on": {
+      "title": "Works on (resources)",
+      "description": "Resources whose own documentation supports or documents this tool. Leave empty if it would only 'probably' work",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+      },
+      "uniqueItems": true
+    },
+    "notes": {
+      "title": "Notes",
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

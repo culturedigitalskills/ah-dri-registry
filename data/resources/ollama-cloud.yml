@@ -1,0 +1,43 @@
+id: ollama-cloud
+name: Ollama Cloud
+provider: Ollama
+provider_level: Commercial
+national_programme: Not applicable
+webpage: https://ollama.com/cloud
+description: Runs open models on Ollama's data-centre GPUs with the same interface as the free Ollama software. Per-token pricing.
+good_for: Trying larger open models than a laptop can run, with little setup.
+eosc_subcategory: Other
+architecture: CPU + GPU
+interface: Command line + web portal
+eligibility: Anyone with an Ollama account; paid plans for more usage.
+how_to_apply: Create an account at https://ollama.com and sign in from the Ollama app or command line (ollama signin).
+time_to_access: Same day (sign up and start).
+access_mode: Paid
+cost_band: Commercial
+contact: Vendor support (Ollama help pages)
+last_checked: '2026-11-25'
+short_name: Ollama Cloud
+tagline: Hosted open models via Ollama
+scientific_domain: Generic
+target_users: Researchers
+geographical_availability: Worldwide
+language_availability: English
+order_type: Open Access
+system_type: Other
+ai_models_available: Hosted models only
+application_window: Not applicable (sign up any time)
+login_method: Own account
+access_type: Virtual
+indicative_cost: Pay as you go per token; Pro $20/month (includes $60 usage credits); Max $100/month.
+costable_in_grants: Unsure
+pricing_url: https://ollama.com/pricing
+server_location: Partner data centres (NVIDIA Cloud Providers); location not stated
+sensitive_data: With conditions
+certifications: None found
+terms_of_use_url: https://ollama.com/terms
+privacy_policy_url: https://ollama.com/privacy
+energy_carbon_info: Not published
+user_manual_url: https://docs.ollama.com/cloud
+life_cycle_status: Production
+collected_by: Karina, AI-assisted (Claude)
+notes: Hosted open models, same interface as local Ollama. Per-token pricing since 31 Aug 2026; hosting partners must keep no logs and retain no data, but prompts leave your machine. The free Ollama software is on the Tools and models tab

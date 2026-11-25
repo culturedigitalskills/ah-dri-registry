@@ -1,0 +1,13 @@
+id: hugging-face-hub
+name: Hugging Face Hub
+type: Model library
+organisation: Hugging Face
+webpage: https://huggingface.co/models
+runs_on: Any
+licence: Varies by model
+cost: Free
+data_stays_local: 'Yes'
+ease_of_use: Web interface
+works_on:
+- hf-inference-endpoints
+notes: Download source for most open models. Each model has its own licence. Hosted inference is listed on the Resources tab

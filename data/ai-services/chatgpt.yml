@@ -1,0 +1,14 @@
+id: chatgpt
+name: ChatGPT
+provider: OpenAI
+version: Free consumer
+access: App
+institutional_licence: 'No'
+trains_on_inputs: 'Yes'
+data_location: No choice of region [to be confirmed]
+sensitive_data: 'No'
+cost: Free + paid tiers
+model_openness: Proprietary
+webpage: https://chatgpt.com
+last_checked: '2026-11-25'
+notes: Covers Free, Go, Plus and Pro personal plans. Training is on by default; turn off 'Improve the model for everyone' in Settings > Data controls

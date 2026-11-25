@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A&amp;H DRI Registry</title>
+<meta name="description" content="Compute, tools and AI services for UK arts and humanities researchers.">
+<style>
+  :root { --ink:#1d2433; --muted:#5b6475; --line:#d9dde5; --bg:#fafbfc; --accent:#2b5fa8; --tag:#eef2f8; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; color:var(--ink); background:#fff; }
+  header, main, footer { max-width:1100px; margin:0 auto; padding:0 1rem; }
+  header { padding-top:2rem; }
+  h1 { font-size:1.6rem; margin:0 0 .25rem; }
+  header p { color:var(--muted); margin:0 0 1rem; max-width:60ch; }
+  nav[role=tablist] { display:flex; gap:.25rem; border-bottom:1px solid var(--line); margin-top:1rem; }
+  nav button { font:inherit; padding:.5rem .9rem; border:1px solid transparent; border-bottom:none; background:none; cursor:pointer; color:var(--muted); border-radius:6px 6px 0 0; }
+  nav button[aria-selected=true] { color:var(--ink); border-color:var(--line); background:#fff; margin-bottom:-1px; font-weight:600; }
+  .controls { display:flex; flex-wrap:wrap; gap:.5rem; margin:1rem 0; }
+  .controls input, .controls select { font:inherit; padding:.4rem .6rem; border:1px solid var(--line); border-radius:6px; background:#fff; }
+  .controls input { flex:1 1 220px; }
+  .count { color:var(--muted); font-size:.9rem; margin-bottom:.5rem; }
+  .card { border:1px solid var(--line); border-radius:8px; padding:.9rem 1rem; margin-bottom:.75rem; background:#fff; }
+  .card h2 { font-size:1.1rem; margin:0; }
+  .card h2 a { color:var(--accent); text-decoration:none; }
+  .card .sub { color:var(--muted); font-size:.9rem; margin:.15rem 0 .5rem; }
+  .tags { display:flex; flex-wrap:wrap; gap:.35rem; margin:.4rem 0; }
+  .tag { background:var(--tag); border-radius:999px; padding:.1rem .6rem; font-size:.8rem; }
+  details summary { cursor:pointer; color:var(--accent); font-size:.9rem; margin-top:.4rem; }
+  dl { display:grid; grid-template-columns:minmax(140px, 220px) 1fr; gap:.3rem 1rem; margin:.6rem 0 0; font-size:.9rem; }
+  dt { color:var(--muted); }
+  dd { margin:0; overflow-wrap:anywhere; }
+  .tbc { background:#fff4d6; }
+  footer { color:var(--muted); font-size:.85rem; padding:2rem 1rem; border-top:1px solid var(--line); margin-top:2rem; }
+  footer a, header a { color:var(--accent); }
+  @media (max-width:600px) { dl { grid-template-columns:1fr; } dt { margin-top:.4rem; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>A&amp;H DRI Registry</h1>
+  <p>Compute, tools and AI services that UK arts and humanities researchers can use, what they cost and how to get access. A community resource: entries marked <span class="tbc">[to be confirmed]</span> still need checking.</p>
+  <p><a href="api/v1/index.json">API</a> · <a href="https://github.com/culturedigitalskills/ah-dri-registry">Source and contributions</a> · <a href="https://github.com/culturedigitalskills/ah-dri-registry/blob/main/docs/how-this-was-made.md">How this was made</a></p>
+  <nav role="tablist" aria-label="Collections"></nav>
+</header>
+<main>
+  <div class="controls" id="controls"></div>
+  <div class="count" id="count" aria-live="polite"></div>
+  <div id="list"></div>
+</main>
+<footer>
+  Data: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, DRI community contributors. Code: MIT.
+  Check details with each provider before applying or uploading data. This is not legal or procurement advice.
+</footer>
+<script>
+const COLLECTIONS = [
+  { slug: "resources", title: "Resources", filters: ["provider_level", "architecture", "cost_band", "application_window", "national_programme"],
+    sub: r => [r.provider, r.national_programme].filter(Boolean).join(" · "),
+    tags: ["architecture", "interface", "cost_band", "application_window", "ai_models_available"],
+    summary: r => r.description },
+  { slug: "tools", title: "Tools and models", filters: ["type", "runs_on", "cost"],
+    sub: r => r.organisation, tags: ["type", "runs_on", "cost", "ease_of_use"], summary: r => r.notes },
+  { slug: "ai-services", title: "AI services", filters: ["provider", "version", "trains_on_inputs", "sensitive_data"],
+    sub: r => [r.provider, r.version].join(" · "), tags: ["access", "trains_on_inputs", "sensitive_data", "cost"],
+    summary: r => r.data_location },
+];
+const cache = {}, schemas = {};
+let current = COLLECTIONS[0];
+
+const el = (tag, attrs = {}, ...kids) => {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) k === "text" ? n.textContent = v : n.setAttribute(k, v);
+  kids.flat().forEach(k => k && n.append(k));
+  return n;
+};
+const linkify = v => {
+  const span = el("span");
+  String(v).split(/(https?:\/\/[^\s)]+)/).forEach((part, i) =>
+    span.append(i % 2 ? el("a", { href: part.replace(/[.,;]$/, ""), text: part }) : part));
+  if (String(v).includes("[to be confirmed]")) span.className = "tbc";
+  return span;
+};
+
+async function load(c) {
+  if (!cache[c.slug]) {
+    const [data, schema] = await Promise.all([
+      fetch(`api/v1/${c.slug}.json`).then(r => r.json()),
+      fetch(`api/v1/schema/${c.slug}.schema.json`).then(r => r.json()),
+    ]);
+    cache[c.slug] = data.items; schemas[c.slug] = schema.properties;
+  }
+  return cache[c.slug];
+}
+
+function tabs() {
+  const nav = document.querySelector("nav");
+  nav.replaceChildren(...COLLECTIONS.map(c => {
+    const b = el("button", { role: "tab", "aria-selected": String(c === current), text: c.title });
+    b.onclick = () => { current = c; tabs(); render(); };
+    return b;
+  }));
+}
+
+async function render() {
+  const items = await load(current), props = schemas[current.slug];
+  const controls = document.getElementById("controls");
+  const q = el("input", { type: "search", placeholder: "Search", "aria-label": "Search" });
+  const selects = current.filters.map(f => {
+    const values = [...new Set(items.map(i => i[f]).filter(Boolean))].sort();
+    return el("select", { "aria-label": props[f].title, "data-field": f },
+      el("option", { value: "", text: `${props[f].title}: any` }), values.map(v => el("option", { value: v, text: v })));
+  });
+  controls.replaceChildren(q, ...selects);
+  const update = () => {
+    const term = q.value.trim().toLowerCase();
+    const shown = items.filter(i =>
+      selects.every(s => !s.value || i[s.dataset.field] === s.value) &&
+      (!term || JSON.stringify(i).toLowerCase().includes(term)));
+    document.getElementById("count").textContent = `${shown.length} of ${items.length}`;
+    document.getElementById("list").replaceChildren(...shown.map(card));
+  };
+  q.oninput = update; selects.forEach(s => s.onchange = update);
+  update();
+}
+
+function card(r) {
+  const props = schemas[current.slug];
+  const title = r.webpage ? el("a", { href: r.webpage, text: r.name }) : r.name;
+  const details = el("details", {}, el("summary", { text: "All details" }),
+    el("dl", {}, Object.entries(r).filter(([k]) => k !== "name").flatMap(([k, v]) =>
+      [el("dt", { text: props[k]?.title || k }), el("dd", {}, linkify(Array.isArray(v) ? v.join(", ") : v))])));
+  return el("article", { class: "card", id: r.id },
+    el("h2", {}, title),
+    el("div", { class: "sub", text: current.sub(r) || "" }),
+    current.summary(r) ? el("p", {}, linkify(current.summary(r))) : null,
+    el("div", { class: "tags" }, current.tags.filter(t => r[t]).map(t => el("span", { class: "tag", title: props[t].title,
+      text: ["Yes", "No", "Unknown", "Optional", "With conditions", "Opt-out available"].includes(r[t]) ? `${props[t].title}: ${r[t]}` : r[t] }))),
+    details);
+}
+
+tabs(); render();
+</script>
+</body>
+</html>

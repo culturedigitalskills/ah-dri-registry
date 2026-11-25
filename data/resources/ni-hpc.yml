@@ -1,0 +1,38 @@
+id: ni-hpc
+name: NI-HPC
+provider: Queen's University Belfast and Ulster University
+provider_level: Institutional
+national_programme: Tier-2 (legacy)
+webpage: https://www.ni-hpc.ac.uk
+description: Northern Ireland's Tier-2 HPC service, run by Queen's University Belfast and Ulster University.
+good_for: General HPC for researchers in Northern Ireland. Details to be confirmed.
+eosc_subcategory: Job Execution
+architecture: CPU + GPU
+eligibility: Queen's University Belfast and Ulster University via registration form; other UK researchers free through UKRI Access to HPC calls.
+how_to_apply: 'QUB and Ulster staff: user registration form at https://www.ni-hpc.ac.uk/Kelvin2/Access. Other UK researchers: UKRI Access to HPC calls.'
+time_to_access: 'Internal users: not published. External: next UKRI Access to HPC round (usually twice a year).'
+access_mode: Free Conditionally
+cost_band: Allocation-based
+last_checked: '2026-11-25'
+short_name: NI-HPC
+tagline: Northern Ireland's CPU and GPU HPC service
+scientific_domain: Generic
+target_users: Researchers
+geographical_availability: United Kingdom (mainly Northern Ireland)
+language_availability: English
+order_type: Order Required
+system_type: HPC cluster
+ai_models_available: Run your own models (open-weight or self-trained)
+application_window: Periodic calls
+login_method: Own account
+access_type: Remote
+indicative_cost: No charge (allocated time).
+costable_in_grants: Unsure
+server_location: UK (Belfast)
+sensitive_data: Unknown
+certifications: None found
+energy_carbon_info: Not published
+user_manual_url: https://ni-hpc.github.io/nihpc-documentation
+training_url: https://www.ni-hpc.ac.uk/Trainingandevents/
+collected_by: Karina, AI-assisted (Claude)
+notes: Tier-2 service

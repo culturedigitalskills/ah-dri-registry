@@ -1,0 +1,43 @@
+id: jasmin
+name: JASMIN
+provider: STFC and NCAS
+provider_level: National
+national_programme: Other national service
+webpage: https://jasmin.ac.uk
+description: Data analysis facility for environmental science, run by STFC and NCAS for NERC.
+good_for: Environmental and climate data; relevant to A&H mainly for environmental humanities projects using such data.
+eosc_subcategory: Job Execution
+architecture: CPU + GPU
+interface: Command line + web portal
+eligibility: Mainly NERC-funded and environmental science researchers; others on a cost-recovery basis. Requires an academic email and approval of a JASMIN account.
+how_to_apply: Create an account at https://accounts.jasmin.ac.uk, then apply for the jasmin-login role with project details. For GPUs, also apply for the ORCHID role.
+time_to_access: Not published (account and role approval by the JASMIN team).
+access_mode: Free Conditionally
+cost_band: Mixed
+contact: JASMIN Helpdesk, via https://help.jasmin.ac.uk
+last_checked: '2026-11-25'
+short_name: JASMIN
+tagline: Environmental data analysis platform with CPUs and GPUs
+scientific_domain: Natural Sciences
+target_users: Researchers
+geographical_availability: United Kingdom
+language_availability: English
+order_type: Order Required
+system_type: HPC cluster
+ai_models_available: Run your own models (open-weight or self-trained)
+application_window: Open all year
+login_method: Own account
+access_type: Remote
+indicative_cost: Free for NERC-funded work; cost recovery for others (rates not published).
+costable_in_grants: Usually, check funder rules
+server_location: UK (STFC Rutherford Appleton Laboratory)
+sensitive_data: 'No'
+certifications: None found
+terms_of_use_url: https://accounts.jasmin.ac.uk/account/conditions/
+privacy_policy_url: https://accounts.jasmin.ac.uk/account/privacy/
+energy_carbon_info: Not published
+user_manual_url: https://help.jasmin.ac.uk
+training_url: https://help.jasmin.ac.uk/docs/getting-started/beginners-training-workshop/
+life_cycle_status: Production
+collected_by: Karina, AI-assisted (Claude)
+notes: NERC data analysis facility, mainly for environmental science

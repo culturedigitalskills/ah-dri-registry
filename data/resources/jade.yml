@@ -1,0 +1,36 @@
+id: jade
+name: JADE
+provider: Hartree Centre
+provider_level: National
+national_programme: Tier-2 (legacy)
+description: National GPU service for machine learning, owned by Oxford and hosted at the Hartree Centre. JADE 2 closed to new users in 2024; a small successor with AMD MI300x GPUs was offered in UKRI's 2025 call.
+good_for: Machine learning projects, if the successor is still open.
+eosc_subcategory: Job Execution
+architecture: CPU + GPU
+eligibility: Closed to new users and groups since September 2024 (JADE 2). Check status of successor.
+how_to_apply: Closed to new users. Check https://www.jade.ac.uk for the successor service.
+time_to_access: Not available.
+access_mode: Peer Reviewed
+cost_band: Allocation-based
+last_checked: '2026-11-25'
+short_name: JADE
+tagline: National GPU service for machine learning (closed to new users)
+scientific_domain: Generic
+target_users: Researchers
+geographical_availability: United Kingdom
+language_availability: English
+order_type: Order Required
+system_type: Dedicated AI system
+ai_models_available: Run your own models (open-weight or self-trained)
+application_window: Closed
+access_type: Remote
+indicative_cost: Not available.
+costable_in_grants: 'No'
+server_location: UK (Hartree Centre, Daresbury)
+sensitive_data: Unknown
+certifications: None found
+energy_carbon_info: JADE 2 ranked 16th most energy-efficient supercomputer when it entered service; no current figures.
+user_manual_url: https://docs.jade.ac.uk
+life_cycle_status: Retirement
+collected_by: Karina, AI-assisted (Claude)
+notes: Tier-2 service; listed as end of life; check the host organisation

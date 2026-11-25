@@ -1,0 +1,35 @@
+id: charger
+name: CHARGER
+provider: University College London (Advanced Research Computing)
+provider_level: National
+national_programme: NCR
+webpage: https://www.ucl.ac.uk/research-innovation/advanced-research-computing/platforms-and-services/national-compute-resource-charger
+description: UCL-led CPU National Compute Resource with over 37,000 cores, hosted at DataVita in Scotland and designed for easier access, including for undergraduates. Expected to open later in 2026.
+good_for: 'Large CPU workloads, teaching, and first steps into national-scale computing. AI: classic machine learning and small models run in parallel over large collections; not model training.'
+eosc_subcategory: Job Execution
+architecture: CPU only
+eligibility: 'NCR: access arrangements not yet published by UCL.'
+how_to_apply: 'Not yet open: UCL will publish access arrangements nearer launch.'
+time_to_access: Not yet known (service not open).
+cost_band: Allocation-based
+last_checked: '2026-11-25'
+short_name: CHARGER
+tagline: New national CPU computing service led by UCL
+scientific_domain: Generic
+target_users: Students
+geographical_availability: United Kingdom
+language_availability: English
+order_type: Order Required
+system_type: HPC cluster
+ai_models_available: Run your own models (open-weight or self-trained)
+application_window: Not yet published
+access_type: Remote
+indicative_cost: 'No charge to the researcher (expected: allocated time).'
+costable_in_grants: Unsure
+server_location: UK (DataVita, Scotland)
+sensitive_data: Unknown
+certifications: None found
+energy_carbon_info: Not published (hosted at DataVita; UCL's renewable electricity pledge does not cover it)
+life_cycle_status: Implementation
+collected_by: Karina, AI-assisted (Claude)
+notes: 'UKRI National Compute Resource (CPU); under development, expected later in 2026. Aims to widen access to disciplines new to supercomputing; also for undergraduates (other target users: researchers).'

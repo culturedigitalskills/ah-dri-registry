@@ -1,0 +1,14 @@
+id: le-chat
+name: Le Chat
+provider: Mistral AI
+version: Free consumer
+access: App
+institutional_licence: 'No'
+trains_on_inputs: 'Yes'
+data_location: EU by default
+sensitive_data: 'No'
+cost: Free + paid tiers
+model_openness: Mixed
+webpage: https://chat.mistral.ai
+last_checked: '2026-11-25'
+notes: 'Covers Free, Pro and Student plans; training on by default with opt-out. Sept 2026 reports say the Team plan now also trains by default: check before use. Mistral also releases open-weight models (see Tools and models tab)'

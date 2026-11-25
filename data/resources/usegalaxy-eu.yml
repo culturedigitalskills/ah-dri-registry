@@ -1,0 +1,41 @@
+id: usegalaxy-eu
+name: UseGalaxy.eu (European Galaxy server)
+provider: University of Freiburg (Freiburg Galaxy Team)
+provider_level: International
+national_programme: Not applicable
+webpage: https://usegalaxy.eu
+description: Free public Galaxy server for building and running analysis workflows in the browser, with hundreds of tools, GPU-enabled JupyterLab and an LLM Hub of locally hosted language models.
+good_for: Reproducible point-and-click workflows; summarising, extracting and translating text with hosted language models; trying machine learning without coding.
+eosc_subcategory: Other
+architecture: CPU + GPU
+interface: Web interface
+eligibility: '[to be confirmed] Anyone can register a free account; usage quotas apply.'
+how_to_apply: Register a free account at https://usegalaxy.eu.
+time_to_access: Same day (register online).
+access_mode: Free
+cost_band: Free at point of use
+contact: UseGalaxy.eu team (contact@usegalaxy.eu)
+last_checked: '2026-11-25'
+short_name: UseGalaxy.eu
+tagline: Free browser workflows with hosted language models
+scientific_domain: Natural Sciences
+target_users: Researchers
+geographical_availability: '[to be confirmed] Worldwide'
+language_availability: English
+order_type: Open Access
+system_type: Other
+ai_models_available: Run your own + hosted models (included)
+application_window: Not applicable (sign up any time)
+login_method: Own account
+access_type: Virtual
+indicative_cost: No charge
+costable_in_grants: 'No'
+server_location: Germany (Freiburg)
+sensitive_data: Unknown
+certifications: ISO 27001 (Freiburg computing centre, since 2021)
+energy_carbon_info: Not published
+user_manual_url: https://galaxyproject.org/eu/
+training_url: https://training.galaxyproject.org
+life_cycle_status: Production
+collected_by: Karina, AI-assisted (Claude)
+notes: LLM Hub models are hosted at the University of Freiburg and can be used inside workflows. A dedicated machine-learning server runs at ml.usegalaxy.eu. Built for the life sciences, but text and ML tools are general. The Galaxy software itself is on the Tools and models tab
