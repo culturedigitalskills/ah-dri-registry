@@ -223,6 +223,7 @@ const COLLECTIONS = [
     blurb: "Chat assistants and model APIs, version by version",
     ask: "What do you need to be sure of?",
     needs: [
+      { key: "free", label: "Free to use", test: r => ["Free", "Free + paid tiers"].includes(r.cost) },
       { key: "notrain", label: "Doesn't train on my data", test: r => r.trains_on_inputs === "No" },
       { key: "uni", label: "University versions", test: r => r.version === "Institutional / education" },
       { key: "sensitive", label: "Possible for sensitive data", test: r => ["Yes", "With conditions"].includes(r.sensitive_data) },
