@@ -238,6 +238,8 @@ const COLLECTIONS = [
 ];
 
 const cache = {}, schemas = {};
+/* A value such as "AIRR + NCR" belongs to both AIRR and NCR */
+const parts = v => (typeof v === "string" ? v.split(" + ").map(x => x.trim()) : []).filter(Boolean);
 const state = { coll: COLLECTIONS[0], q: "", needs: new Set(), sel: {} };
 const $ = id => document.getElementById(id);
 const el = (tag, attrs = {}, ...kids) => {
@@ -306,7 +308,7 @@ async function render() {
   const search = el("input", { type: "search", placeholder: "Search by name, place or task, e.g. transcription", "aria-label": "Search", value: state.q });
   search.oninput = () => { state.q = search.value; update(); };
   const selects = Object.entries(c.filters).map(([f, any]) => {
-    const values = [...new Set(items.map(i => i[f]).filter(Boolean))].sort();
+    const values = [...new Set(items.flatMap(i => parts(i[f])))].sort();
     const s = el("select", { "aria-label": props[f].title }, el("option", { value: "", text: any }), values.map(v => el("option", { value: v, text: v })));
     s.value = state.sel[f] || "";
     s.onchange = () => { state.sel[f] = s.value; update(); };
@@ -321,7 +323,7 @@ function update() {
   const needs = c.needs.filter(n => state.needs.has(n.key));
   const shown = items.filter(i =>
     needs.every(n => n.test(i)) &&
-    Object.entries(state.sel).every(([k, v]) => !v || i[k] === v) &&
+    Object.entries(state.sel).every(([k, v]) => !v || parts(i[k]).includes(v)) &&
     (!term || JSON.stringify(i).toLowerCase().includes(term)));
   writeHash();
   $("count").textContent = shown.length === items.length ? `All ${items.length} ${c.noun}` : `${shown.length} of ${items.length} ${c.noun}`;
