@@ -23,6 +23,7 @@
     --sans: "IBM Plex Sans", system-ui, sans-serif;
   }
   * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
   html { background: var(--stone); }
   body { margin: 0; color: var(--forest); font: 400 17px/1.6 var(--serif); }
   a { color: var(--forest); text-decoration-color: var(--celadon); text-decoration-thickness: 2px; text-underline-offset: 3px; }
@@ -94,6 +95,39 @@
   .group h2 { font: 500 1.6rem/1.2 var(--serif); margin: 0 0 .35rem; }
   .group .note { font: 400 .95rem/1.5 var(--sans); color: var(--muted); max-width: 70ch; margin: 0 0 .5rem; }
 
+  .way em { display: block; font: italic 400 1rem/1.35 var(--serif); color: var(--forest); margin-bottom: .2rem; }
+
+  .explain { margin-top: 1.75rem; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: .75rem 0; }
+  .explain > summary { font: 600 1rem var(--sans); color: var(--forest); }
+  .kinds { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem 2rem; margin-top: 1rem; }
+  .kinds h2 { font: 600 1.2rem/1.2 var(--serif); margin: 0; }
+  .kinds .motto { font-style: italic; margin: .15rem 0 .4rem; }
+  .kinds p { margin: 0; font-size: 1rem; }
+  .explain .cpu { font: 400 .92rem/1.5 var(--sans); color: var(--muted); margin: 1rem 0 .25rem; max-width: 75ch; }
+
+  .pick { display: inline-flex; align-items: center; gap: .4rem; margin-top: .6rem; font: 500 .85rem var(--sans); color: var(--muted); cursor: pointer; }
+  .pick input { accent-color: var(--forest); margin: 0; }
+
+  .tray { position: sticky; bottom: 0; z-index: 5; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .5rem 1rem; background: var(--forest); color: var(--parchment); padding: .75rem 1.25rem; font: 400 .92rem var(--sans); }
+  .tray .acts { display: flex; gap: 1rem; align-items: center; }
+  .tray .go { font: 600 .92rem var(--sans); background: var(--sage); color: var(--forest); border: 0; padding: .45rem .9rem; cursor: pointer; }
+  .tray .go:disabled { background: transparent; color: var(--celadon); padding: 0; cursor: default; }
+  .tray .quiet { color: var(--parchment); }
+  .quiet { font: inherit; background: none; border: 0; padding: 0; color: var(--forest); text-decoration: underline; text-decoration-color: var(--celadon); text-underline-offset: 3px; cursor: pointer; }
+
+  .compare { margin: 1.5rem 0 .5rem; padding-top: 1rem; border-top: 3px solid var(--sage); }
+  .compare-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .5rem 1rem; font: 400 .9rem var(--sans); }
+  .compare h2 { font: 500 1.6rem/1.2 var(--serif); margin: 0 0 .75rem; }
+  .compare .scroll { overflow-x: auto; }
+  .compare table { border-collapse: collapse; width: 100%; min-width: 560px; font: 400 .9rem/1.45 var(--sans); }
+  .compare th, .compare td { text-align: left; vertical-align: top; padding: .55rem .75rem .55rem 0; border-bottom: 1px solid var(--rule); }
+  .compare thead th { font: 600 1.1rem/1.25 var(--serif); border-bottom: 2px solid var(--sage); }
+  .compare tbody th { font-weight: 500; color: var(--muted); width: 180px; }
+  .compare td { overflow-wrap: anywhere; }
+  .compare .none { color: var(--muted); font-style: italic; }
+  .compare tbody th, .compare thead th:first-child { position: sticky; left: 0; background: var(--parchment); }
+  .compare td { min-width: 170px; }
+
   footer { padding: 2rem 0 3rem; font: 400 .88rem/1.6 var(--sans); color: var(--muted); max-width: 70ch; }
 
   @media (max-width: 760px) {
@@ -106,6 +140,8 @@
     .way b { margin-top: 0; }
     .sheet { padding: 1.25rem 1rem 2rem; margin-left: -1rem; margin-right: -1rem; }
     .entry { grid-template-columns: 1fr; }
+    .kinds { grid-template-columns: 1fr; }
+    .compare tbody th { width: 105px; min-width: 105px; padding-right: .6rem; }
     dl { grid-template-columns: 1fr; }
     dt { margin-top: .5rem; }
   }
@@ -144,6 +180,28 @@
     <p>Supercomputers, cloud services, tools and AI assistants open to UK arts and humanities researchers, with who can apply, what it costs and what happens to your data.</p>
   </section>
 
+  <details class="explain">
+    <summary>Not sure which you need?</summary>
+    <div class="kinds">
+      <div>
+        <h2>Computing services</h2>
+        <p class="motto">You bring the code or software; they provide the machine.</p>
+        <p>Processing power you use to run your own work when your laptop is too slow or too small, for example training or fine-tuning a model, transcribing thousands of hours of audio, or building 3D models from photographs. It comes as CPU or GPU time on university clusters, national supercomputers or cloud platforms. Browser notebooks such as Colab count here too: the interface is theirs, but the work is yours.</p>
+      </div>
+      <div>
+        <h2>Tools and models</h2>
+        <p class="motto">You run it.</p>
+        <p>Software you download or install and operate yourself, on your laptop or on a computing service.</p>
+      </div>
+      <div>
+        <h2>AI services</h2>
+        <p class="motto">They run it.</p>
+        <p>Ready-made AI that someone else hosts and runs: you log in or upload material and get results back. Your material goes to them, which is why this list focuses on what happens to your data.</p>
+      </div>
+    </div>
+    <p class="cpu">CPUs are general-purpose processors, good for running many ordinary jobs side by side. GPUs are specialist processors, much faster for AI, images and 3D.</p>
+  </details>
+
   <div class="ways" role="tablist" aria-label="What are you looking for?"></div>
 
   <main class="sheet">
@@ -152,9 +210,12 @@
       <fieldset class="needs" id="needs"></fieldset>
       <div class="refine" id="refine"></div>
     </section>
+    <section id="compare" class="compare" hidden aria-label="Comparison"></section>
     <div class="tally"><span id="count" aria-live="polite"></span><span id="tools"></span></div>
     <div id="list"></div>
   </main>
+
+  <div class="tray" id="tray" hidden></div>
 
   <footer>
     A community registry compiled from public sources by the Connecting Arts and Humanities project and contributors.
@@ -168,8 +229,9 @@
 const COLLECTIONS = [
   {
     slug: "resources", title: "Computing services", noun: "computing services",
-    blurb: "Supercomputers, clusters, cloud and notebooks",
+    motto: "You bring the code; they provide the machine", blurb: "Supercomputers, clusters, cloud and notebooks",
     ask: "Which of these do you need?",
+    compare: ["open_to", "member_institutions", "indicative_cost", "costable_in_grants", "architecture", "interface", "ai_models_available", "application_window", "time_to_access", "how_to_apply", "eligibility", "server_location", "sensitive_data", "energy_carbon_info", "contact"],
     needs: [
       { key: "noapply", label: "No application needed", test: r => ["Anyone with an account", "European researchers (eduGAIN login)"].includes(r.open_to) },
       { key: "free", label: "No charge to me", test: r => ["Free at point of use", "Allocation-based"].includes(r.cost_band) },
@@ -200,8 +262,9 @@ const COLLECTIONS = [
   },
   {
     slug: "tools", title: "Tools and models", noun: "tools and models",
-    blurb: "Software you run yourself, and model libraries",
+    motto: "You run it", blurb: "Software you install yourself, and model libraries",
     ask: "What matters to you?",
+    compare: ["type", "runs_on", "cost", "licence", "data_stays_local", "ease_of_use", "works_on", "notes"],
     needs: [
       { key: "free", label: "Free", test: r => r.cost === "Free" },
       { key: "local", label: "Data stays on my machine", test: r => r.data_stays_local === "Yes" },
@@ -220,8 +283,9 @@ const COLLECTIONS = [
   },
   {
     slug: "ai-services", title: "AI services", noun: "AI services",
-    blurb: "Chat assistants and model APIs, version by version",
+    motto: "They run it", blurb: "Chat assistants and model APIs, version by version",
     ask: "What do you need to be sure of?",
+    compare: ["version", "access", "institutional_licence", "trains_on_inputs", "data_location", "sensitive_data", "cost", "model_openness", "notes"],
     needs: [
       { key: "free", label: "Free to use", test: r => ["Free", "Free + paid tiers"].includes(r.cost) },
       { key: "notrain", label: "Doesn't train on my data", test: r => r.trains_on_inputs === "No" },
@@ -248,7 +312,8 @@ const COLLECTIONS = [
 const cache = {}, schemas = {};
 /* A value such as "AIRR + NCR" belongs to both AIRR and NCR */
 const parts = v => (typeof v === "string" ? v.split(" + ").map(x => x.trim()) : []).filter(Boolean);
-const state = { coll: COLLECTIONS[0], q: "", needs: new Set(), sel: {} };
+const state = { coll: COLLECTIONS[0], q: "", needs: new Set(), sel: {}, picks: [], comparing: false };
+const MAX_PICKS = 4;
 const $ = id => document.getElementById(id);
 const el = (tag, attrs = {}, ...kids) => {
   const n = document.createElement(tag);
@@ -273,12 +338,15 @@ function readHash() {
   state.coll = c; state.q = p.get("q") || "";
   state.needs = new Set((p.get("need") || "").split(",").filter(Boolean));
   state.sel = {}; Object.keys(c.filters).forEach(f => p.get(f) && (state.sel[f] = p.get(f)));
+  state.picks = (p.get("compare") || "").split(",").filter(Boolean).slice(0, MAX_PICKS);
+  state.comparing = state.picks.length > 1;
 }
 function writeHash() {
   const p = new URLSearchParams();
   if (state.needs.size) p.set("need", [...state.needs].join(","));
   if (state.q) p.set("q", state.q);
   Object.entries(state.sel).forEach(([k, v]) => v && p.set(k, v));
+  if (state.comparing && state.picks.length > 1) p.set("compare", state.picks.join(","));
   const qs = p.toString();
   history.replaceState(null, "", `#${state.coll.slug}${qs ? "?" + qs : ""}`);
 }
@@ -297,8 +365,8 @@ async function load(c) {
 function ways() {
   document.querySelector(".ways").replaceChildren(...COLLECTIONS.map(c => {
     const b = el("button", { class: "way", role: "tab", "aria-selected": String(c === state.coll), "aria-controls": "list" },
-      el("b", { text: c.title }), el("span", { text: c.blurb }));
-    b.onclick = () => { state.coll = c; state.q = ""; state.needs.clear(); state.sel = {}; ways(); render(); };
+      el("b", { text: c.title }), el("em", { text: c.motto }), el("span", { text: c.blurb }));
+    b.onclick = () => { state.coll = c; state.q = ""; state.needs.clear(); state.sel = {}; state.picks = []; state.comparing = false; ways(); render(); };
     return b;
   }));
 }
@@ -334,6 +402,7 @@ function update() {
     Object.entries(state.sel).every(([k, v]) => !v || parts(i[k]).includes(v)) &&
     (!term || JSON.stringify(i).toLowerCase().includes(term)));
   writeHash();
+  tray(); comparison();
   $("count").textContent = shown.length === items.length ? `All ${items.length} ${c.noun}` : `${shown.length} of ${items.length} ${c.noun}`;
   const narrowed = term || needs.length || Object.values(state.sel).some(Boolean);
   const clear = el("button", { type: "button", text: "Clear" });
@@ -372,11 +441,58 @@ function entry(r) {
   return el("article", { class: "entry", id: r.id },
     el("div", {},
       el("h3", {}, r.webpage ? el("a", { href: r.webpage, text: r.name }) : r.name),
-      el("p", { class: "by", text: c.by(r) || "" })),
+      el("p", { class: "by", text: c.by(r) || "" }),
+      pickBox(r)),
     el("div", {},
       c.what(r) ? el("p", { class: "what" }, linkify(c.what(r))) : null,
       el("ul", { class: "signals" }, signals)),
     details);
+}
+
+function pickBox(r) {
+  const box = el("input", { type: "checkbox" });
+  box.checked = state.picks.includes(r.id);
+  box.disabled = !box.checked && state.picks.length >= MAX_PICKS;
+  box.onchange = () => {
+    state.picks = box.checked ? [...state.picks, r.id] : state.picks.filter(id => id !== r.id);
+    if (state.picks.length < 2) state.comparing = false;
+    update();
+  };
+  return el("label", { class: "pick", title: box.disabled ? `You can compare up to ${MAX_PICKS} at a time` : "" }, box, "Compare");
+}
+
+function tray() {
+  const t = $("tray"), n = state.picks.length;
+  t.hidden = n === 0 || state.comparing;
+  if (t.hidden) return;
+  const names = state.picks.map(id => cache[state.coll.slug].find(r => r.id === id)?.name).filter(Boolean);
+  const go = el("button", { type: "button", class: "go", text: n > 1 ? `Compare ${n}` : "Choose one more to compare" });
+  go.disabled = n < 2;
+  go.onclick = () => { state.comparing = true; update(); $("compare").scrollIntoView({ behavior: "smooth", block: "start" }); };
+  const clear = el("button", { type: "button", class: "quiet", text: "Clear" });
+  clear.onclick = () => { state.picks = []; state.comparing = false; update(); };
+  t.replaceChildren(el("span", { text: names.join(", ") }), el("span", { class: "acts" }, go, clear));
+}
+
+function comparison() {
+  const box = $("compare"), c = state.coll, props = schemas[c.slug];
+  const rows = state.picks.map(id => cache[c.slug].find(r => r.id === id)).filter(Boolean);
+  box.hidden = !(state.comparing && rows.length > 1);
+  if (box.hidden) return;
+  const close = el("button", { type: "button", class: "quiet", text: "Close comparison" });
+  close.onclick = () => { state.comparing = false; update(); };
+  const share = el("button", { type: "button", class: "quiet", text: "Copy link to this comparison" });
+  share.onclick = async () => { try { await navigator.clipboard.writeText(location.href); share.textContent = "Link copied"; } catch { share.textContent = "Copy the address bar to share"; } };
+  const fields = c.compare.filter(f => rows.some(r => r[f] !== undefined));
+  const cell = v => v === undefined ? el("span", { class: "none", text: "Not recorded" }) : linkify(Array.isArray(v) ? v.join(", ") : v);
+  const table = el("table", {},
+    el("thead", {}, el("tr", {}, el("th", { scope: "col", text: "" }),
+      rows.map(r => el("th", { scope: "col" }, r.webpage ? el("a", { href: r.webpage, text: r.name }) : r.name)))),
+    el("tbody", {}, fields.map(f => el("tr", {}, el("th", { scope: "row", text: props[f]?.title || f }),
+      rows.map(r => el("td", {}, cell(r[f])))))));
+  box.replaceChildren(
+    el("div", { class: "compare-head" }, el("h2", { text: "Side by side" }), el("span", {}, share, " · ", close)),
+    el("div", { class: "scroll", tabindex: "0", role: "region", "aria-label": "Comparison table" }, table));
 }
 
 readHash(); ways(); render();
