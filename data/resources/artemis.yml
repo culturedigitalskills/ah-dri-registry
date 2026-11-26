@@ -8,6 +8,8 @@ eosc_subcategory: Job Execution
 architecture: CPU + GPU
 interface: Command line + web portal
 eligibility: Academic researchers inside the University of Brighton and University of Sussex.
+open_to: Members of specific institutions only
+member_institutions: University of Sussex and University of Brighton
 how_to_apply: Contact your institution's research computing or IT services team.
 time_to_access: Not available.
 access_mode: Free Conditionally

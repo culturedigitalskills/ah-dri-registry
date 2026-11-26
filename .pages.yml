@@ -103,6 +103,22 @@ content:
     label: Eligibility
     description: Who can use it, e.g. staff at member institutions, any UK researcher, early career, unaffiliated
     type: text
+  - name: open_to
+    label: Open to
+    description: Who can actually use it. Services for members of specific institutions are shown separately on the browse page
+    type: select
+    options:
+      values:
+      - Anyone with an account
+      - Any UK researcher, by application
+      - Members, plus other UK researchers through national calls
+      - Members of specific institutions only
+      - European researchers (eduGAIN login)
+      - No longer open
+  - name: member_institutions
+    label: Member institutions
+    description: 'For services limited to members: the institutions or consortium whose staff can use it, e.g. GW4 universities: Bath, Bristol, Cardiff, Exeter'
+    type: string
   - name: how_to_apply
     label: How to apply
     description: Steps in one line, plus URL

@@ -10,6 +10,7 @@ eosc_subcategory: Job Execution
 architecture: CPU only
 interface: Command line
 eligibility: 'NCR: access policy set by UKRI; NCR-specific routes not yet published. Previously via UKRI Access to HPC calls for UK research organisations.'
+open_to: Any UK researcher, by application
 how_to_apply: 'NCR routes not yet published: watch UKRI announcements and https://www.cirrus.ac.uk.'
 time_to_access: Not yet known (NCR routes unpublished).
 cost_band: Allocation-based

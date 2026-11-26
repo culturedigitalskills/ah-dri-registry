@@ -10,6 +10,7 @@ eosc_subcategory: Other
 architecture: CPU + GPU
 interface: Command line + web portal
 eligibility: Anyone with an Ollama account; paid plans for more usage.
+open_to: Anyone with an account
 how_to_apply: Create an account at https://ollama.com and sign in from the Ollama app or command line (ollama signin).
 time_to_access: Same day (sign up and start).
 access_mode: Paid

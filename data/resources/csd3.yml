@@ -10,6 +10,8 @@ eosc_subcategory: Job Execution
 architecture: CPU + GPU
 interface: Command line + web portal
 eligibility: Academic researchers inside and outside Cambridge, and industry; external academics typically via UKRI Access to HPC calls.
+open_to: Members, plus other UK researchers through national calls
+member_institutions: University of Cambridge
 how_to_apply: 'External academics: UKRI Access to HPC calls when open. Cambridge users: via the Research Computing Service, https://www.hpc.cam.ac.uk.'
 time_to_access: 'External: next UKRI Access to HPC round (usually twice a year), then project start. Cambridge users: not published.'
 access_mode: Peer Reviewed

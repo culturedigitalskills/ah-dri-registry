@@ -14,6 +14,14 @@ provider_level:
   - label: Commercial
   - label: International
 
+open_to:
+  - label: Anyone with an account
+  - label: Any UK researcher, by application
+  - label: Members, plus other UK researchers through national calls
+  - label: Members of specific institutions only
+  - label: European researchers (eduGAIN login)
+  - label: No longer open
+
 national_programme:
   - label: AIRR
   - label: NCR

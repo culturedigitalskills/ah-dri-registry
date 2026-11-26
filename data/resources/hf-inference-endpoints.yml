@@ -10,6 +10,7 @@ eosc_subcategory: Container Management
 architecture: CPU + GPU
 interface: Command line + web portal
 eligibility: Anyone with a Hugging Face account and payment method.
+open_to: Anyone with an account
 how_to_apply: Create an account at https://huggingface.co, add a payment method, then deploy an endpoint from a model's page.
 time_to_access: Same day once an account and payment method are set up.
 access_mode: Paid

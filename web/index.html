@@ -90,6 +90,9 @@
   dd { margin: 0; overflow-wrap: anywhere; }
   .tbc { background: #ece6cf; padding: 0 .15rem; }
   .nothing { padding: 2rem 0; font-style: italic; }
+  .group { margin-top: 2.75rem; padding-top: 1.25rem; border-top: 3px solid var(--sage); }
+  .group h2 { font: 500 1.6rem/1.2 var(--serif); margin: 0 0 .35rem; }
+  .group .note { font: 400 .95rem/1.5 var(--sans); color: var(--muted); max-width: 70ch; margin: 0 0 .5rem; }
 
   footer { padding: 2rem 0 3rem; font: 400 .88rem/1.6 var(--sans); color: var(--muted); max-width: 70ch; }
 
@@ -168,6 +171,7 @@ const COLLECTIONS = [
     blurb: "Supercomputers, clusters, cloud and notebooks",
     ask: "Which of these do you need?",
     needs: [
+      { key: "noapply", label: "No application needed", test: r => ["Anyone with an account", "European researchers (eduGAIN login)"].includes(r.open_to) },
       { key: "free", label: "No charge to me", test: r => ["Free at point of use", "Allocation-based"].includes(r.cost_band) },
       { key: "gpu", label: "GPUs", test: r => r.architecture === "CPU + GPU" },
       { key: "uk", label: "Servers in the UK", test: r => /^UK/.test(r.server_location || "") },
@@ -178,6 +182,9 @@ const COLLECTIONS = [
     by: r => [r.provider, r.national_programme && r.national_programme !== "Not applicable" ? r.national_programme : null].filter(Boolean).join(", "),
     what: r => r.good_for || r.description,
     signals: r => [
+      r.open_to === "Members of specific institutions only" ? ["Only for " + (r.member_institutions || "members"), "caution"]
+        : r.open_to === "Members, plus other UK researchers through national calls" ? [`Mainly for ${r.member_institutions || "members"}; others through national calls`, ""]
+        : r.open_to && r.open_to !== "No longer open" ? ["Open to: " + r.open_to.charAt(0).toLowerCase() + r.open_to.slice(1), r.open_to === "Any UK researcher, by application" || r.open_to === "Anyone with an account" ? "good" : ""] : null,
       r.life_cycle_status === "Termination" ? ["Closed to all users", "stop"]
         : r.life_cycle_status === "Retirement" ? ["Closing down", "caution"]
         : r.life_cycle_status === "Implementation" ? ["Not open yet", "caution"] : null,
@@ -333,9 +340,25 @@ function update() {
   const share = el("button", { type: "button", text: "Copy link to this list" });
   share.onclick = async () => { try { await navigator.clipboard.writeText(location.href); share.textContent = "Link copied"; } catch { share.textContent = "Copy the address bar to share"; } };
   $("tools").replaceChildren(...(narrowed ? [clear, " · ", share] : []));
-  $("list").replaceChildren(...(shown.length ? shown.map(entry)
-    : [el("p", { class: "nothing" }, "Nothing meets all of these. Untick one to see more, or ",
-        el("a", { href: "https://github.com/culturedigitalskills/ah-dri-registry/issues/new/choose", text: "suggest a service we're missing" }), ".")]));
+  const nothing = () => el("p", { class: "nothing" }, "Nothing meets all of these. Untick one to see more, or ",
+    el("a", { href: "https://github.com/culturedigitalskills/ah-dri-registry/issues/new/choose", text: "suggest a service we're missing" }), ".");
+  if (c.slug !== "resources") {
+    $("list").replaceChildren(...(shown.length ? shown.map(entry) : [nothing()]));
+    return;
+  }
+  /* Computing services: what you can use first; members-only and closed services after */
+  const membersOnly = shown.filter(r => r.open_to === "Members of specific institutions only");
+  const closed = shown.filter(r => r.open_to === "No longer open");
+  const main = shown.filter(r => !membersOnly.includes(r) && !closed.includes(r));
+  $("count").textContent = `${main.length} you can apply to or sign up for` +
+    (membersOnly.length || closed.length ? `, plus ${membersOnly.length} for members only and ${closed.length} no longer open` : "");
+  const group = (title, note, rows) => rows.length ? el("section", { class: "group" },
+    el("h2", { text: title }), el("p", { class: "note", text: note }), rows.map(entry)) : null;
+  $("list").replaceChildren(
+    ...(main.length ? main.map(entry) : [nothing()]),
+    group("Only for members of these institutions",
+      "Listed so you know they exist. If you are not at one of these institutions, ask your own research computing or IT team: most universities run a cluster like these, and some offer access to partners.", membersOnly),
+    group("No longer open to new users", "Kept for reference, with pointers to successor services where known.", closed));
 }
 
 function entry(r) {

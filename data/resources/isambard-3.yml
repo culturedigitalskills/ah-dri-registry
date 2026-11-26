@@ -10,6 +10,8 @@ eosc_subcategory: Job Execution
 architecture: CPU only
 interface: Command line
 eligibility: GW4 universities (Bath, Bristol, Cardiff, Exeter) via internal processes; others via UKRI calls for UK research organisations eligible for UKRI funding. Now an NCR under UKRI access policy.
+open_to: Members, plus other UK researchers through national calls
+member_institutions: 'GW4 universities: Bath, Bristol, Cardiff and Exeter'
 how_to_apply: 'GW4 staff: through their own institution''s internal process. Others: UKRI calls listed at https://apply.isambard.ac.uk/ukri.'
 time_to_access: 'GW4: depends on each institution''s process. External: next UKRI call round.'
 access_mode: Peer Reviewed

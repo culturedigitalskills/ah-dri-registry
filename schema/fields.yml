@@ -34,6 +34,8 @@ resources:
     - {key: architecture, label: Architecture, type: select, vocab: architecture, core: true, description: Type of computing}
     - {key: interface, label: Interface, type: select, vocab: interface, core: true, description: How researchers use it}
     - {key: eligibility, label: Eligibility, type: text, core: true, description: "Who can use it, e.g. staff at member institutions, any UK researcher, early career, unaffiliated"}
+    - {key: open_to, label: Open to, type: select, vocab: open_to, core: true, description: "Who can actually use it. Services for members of specific institutions are shown separately on the browse page"}
+    - {key: member_institutions, label: Member institutions, type: string, description: "For services limited to members: the institutions or consortium whose staff can use it, e.g. GW4 universities: Bath, Bristol, Cardiff, Exeter"}
     - {key: how_to_apply, label: How to apply, type: text, core: true, eosc: order, description: "Steps in one line, plus URL"}
     - {key: time_to_access, label: Time to access, type: string, core: true, description: "How long until you can use it, e.g. same day, 2 weeks, next allocation round"}
     - {key: access_mode, label: Access mode, type: select, vocab: access_mode, core: true, eosc: accessModes, description: Basis on which access is granted}

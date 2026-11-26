@@ -8,6 +8,7 @@ good_for: Training and running AI models at scale.
 eosc_subcategory: Job Execution
 architecture: CPU + GPU
 eligibility: 'NCR: access policy set by UKRI; routes not yet published. Previously mainly commercial access through the Hartree Centre.'
+open_to: Any UK researcher, by application
 how_to_apply: 'NCR routes not yet published: watch UKRI announcements.'
 time_to_access: Not yet known (NCR routes unpublished).
 cost_band: Allocation-based

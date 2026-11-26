@@ -10,6 +10,7 @@ eosc_subcategory: Other
 architecture: CPU + GPU
 interface: Notebook
 eligibility: Anyone with a Google account; paid tiers by subscription.
+open_to: Anyone with an account
 how_to_apply: Sign in with a Google account at https://colab.research.google.com; upgrade to Pro for more resources.
 time_to_access: Same day (sign in and start).
 access_mode: Free

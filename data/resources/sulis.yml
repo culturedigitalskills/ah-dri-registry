@@ -9,6 +9,8 @@ good_for: Running many medium-sized jobs; now mainly for Midlands consortium use
 eosc_subcategory: Job Execution
 architecture: CPU + GPU
 eligibility: HPC Midlands+ consortium members via local research computing teams (until March 2026); no further UKRI calls.
+open_to: Members of specific institutions only
+member_institutions: HPC Midlands+ consortium
 how_to_apply: 'Effectively closed to new users: consortium access ended March 2026 and there are no further UKRI calls.'
 time_to_access: Not available.
 access_mode: Free Conditionally

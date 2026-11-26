@@ -10,6 +10,8 @@ eosc_subcategory: Job Execution
 architecture: CPU + GPU
 interface: Command line
 eligibility: Researchers at N8 universities; a separate allocation for non-N8 EPSRC-funded researchers. Service listed as end of life.
+open_to: Members of specific institutions only
+member_institutions: 'N8 universities: Durham, Lancaster, Leeds, Liverpool, Manchester, Newcastle, Sheffield and York'
 how_to_apply: Project PI or supervisor completes the N8 CIR Bede project application form (https://n8cir.org.uk/bede/); researchers are then added to the project.
 time_to_access: Not published (PI application reviewed by N8 CIR).
 access_mode: Free Conditionally

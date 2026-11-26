@@ -10,6 +10,7 @@ eosc_subcategory: Job Execution
 architecture: CPU + GPU
 interface: Command line + web portal
 eligibility: 'NCR: access policy set by UKRI; routes not yet published. Previously via EPSRC Access to HPC calls or the Baskerville consortium.'
+open_to: Any UK researcher, by application
 how_to_apply: 'NCR routes not yet published: watch UKRI announcements and https://www.baskerville.ac.uk.'
 time_to_access: Not yet known (NCR routes unpublished).
 cost_band: Allocation-based

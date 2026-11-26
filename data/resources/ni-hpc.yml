@@ -9,6 +9,8 @@ good_for: General HPC for researchers in Northern Ireland. Details to be confirm
 eosc_subcategory: Job Execution
 architecture: CPU + GPU
 eligibility: Queen's University Belfast and Ulster University via registration form; other UK researchers free through UKRI Access to HPC calls.
+open_to: Members, plus other UK researchers through national calls
+member_institutions: Queen's University Belfast and Ulster University
 how_to_apply: 'QUB and Ulster staff: user registration form at https://www.ni-hpc.ac.uk/Kelvin2/Access. Other UK researchers: UKRI Access to HPC calls.'
 time_to_access: 'Internal users: not published. External: next UKRI Access to HPC round (usually twice a year).'
 access_mode: Free Conditionally

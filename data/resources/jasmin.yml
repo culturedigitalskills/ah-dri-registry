@@ -10,6 +10,7 @@ eosc_subcategory: Job Execution
 architecture: CPU + GPU
 interface: Command line + web portal
 eligibility: Mainly NERC-funded and environmental science researchers; others on a cost-recovery basis. Requires an academic email and approval of a JASMIN account.
+open_to: Any UK researcher, by application
 how_to_apply: Create an account at https://accounts.jasmin.ac.uk, then apply for the jasmin-login role with project details. For GPUs, also apply for the ORCHID role.
 time_to_access: Not published (account and role approval by the JASMIN team).
 access_mode: Free Conditionally

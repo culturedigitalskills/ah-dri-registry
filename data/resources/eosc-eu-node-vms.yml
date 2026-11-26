@@ -10,6 +10,7 @@ eosc_subcategory: Virtual Machine Management
 architecture: CPU + GPU
 interface: Web interface
 eligibility: 'eduGAIN users from the EU27 and Horizon Europe Associated Countries get roles above Observer (faculty: Investigator; staff: Collaborator). UK can access.'
+open_to: European researchers (eduGAIN login)
 how_to_apply: Log in at https://open-science-cloud.ec.europa.eu with your institutional login (eduGAIN); access level is set automatically.
 time_to_access: Same day (log in with eduGAIN).
 access_mode: Free Conditionally

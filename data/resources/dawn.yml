@@ -10,6 +10,7 @@ eosc_subcategory: Job Execution
 architecture: CPU + GPU
 interface: Command line + web portal
 eligibility: UK-based public researchers, academia and SMEs via AIRR routes; projects must be conducted in the UK.
+open_to: Any UK researcher, by application
 how_to_apply: 'Apply through the AIRRPortal: https://portal-airr.isambard.ac.uk. Non-Cambridge users then send an SSH public key to support@hpc.cam.ac.uk.'
 time_to_access: Applications accepted all year; decision time not published. Awards must be used within 3 months of project start.
 access_mode: Peer Reviewed

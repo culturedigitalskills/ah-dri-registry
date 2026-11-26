@@ -10,6 +10,7 @@ eosc_subcategory: Other
 architecture: CPU + GPU
 interface: Notebook
 eligibility: Anyone with a Kaggle account.
+open_to: Anyone with an account
 how_to_apply: Create a free account at https://www.kaggle.com.
 time_to_access: Same day (sign up and start).
 access_mode: Free

@@ -10,6 +10,7 @@ eosc_subcategory: Virtual Machine Management
 architecture: CPU + GPU
 interface: Command line + web portal
 eligibility: Anyone with an account and payment method; check institutional agreements.
+open_to: Anyone with an account
 how_to_apply: Create an account and add a payment method; first check your institution's cloud agreements and research credit schemes.
 time_to_access: Same day once an account and payment method are set up.
 access_mode: Paid

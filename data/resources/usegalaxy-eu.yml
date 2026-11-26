@@ -10,6 +10,7 @@ eosc_subcategory: Other
 architecture: CPU + GPU
 interface: Web interface
 eligibility: '[to be confirmed] Anyone can register a free account; usage quotas apply.'
+open_to: Anyone with an account
 how_to_apply: Register a free account at https://usegalaxy.eu.
 time_to_access: Same day (register online).
 access_mode: Free
