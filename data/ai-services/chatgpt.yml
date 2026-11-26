@@ -5,7 +5,7 @@ version: Free consumer
 access: App
 institutional_licence: 'No'
 trains_on_inputs: 'Yes'
-data_location: No choice of region [to be confirmed]
+data_location: No choice of region
 sensitive_data: 'No'
 cost: Free + paid tiers
 model_openness: Proprietary

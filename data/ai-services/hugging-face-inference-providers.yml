@@ -5,7 +5,7 @@ version: API
 access: API
 institutional_licence: 'No'
 trains_on_inputs: Unknown
-data_location: Depends on the third-party provider [to be confirmed]
+data_location: Depends on which third-party provider serves the request.
 sensitive_data: Unknown
 cost: Free + paid tiers
 model_openness: Open-weight

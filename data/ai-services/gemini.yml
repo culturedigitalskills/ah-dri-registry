@@ -1,14 +1,14 @@
 id: gemini
-name: Gemini
+name: fn
 provider: Google
 version: Free consumer
 access: App
 institutional_licence: 'No'
 trains_on_inputs: 'Yes'
-data_location: No choice of region [to be confirmed]
+data_location: No choice of region
 sensitive_data: 'No'
 cost: Free + paid tiers
 model_openness: Proprietary
 webpage: https://gemini.google.com
 last_checked: '2026-11-25'
-notes: Personal Google account. [to be confirmed] Chats may be reviewed and used to improve models while Gemini Apps Activity is on
+notes: Personal Google account. Chats may be reviewed and used to improve models while Gemini Apps Activity is on

@@ -11,4 +11,4 @@ cost: Pay per use
 model_openness: Proprietary
 webpage: https://cloud.google.com/vertex-ai
 last_checked: '2026-11-25'
-notes: '[to be confirmed] Paid Vertex AI terms state no training on customer data; the free Google AI Studio tier may differ'
+notes: 'Paid Gemini API terms state no training on customer data; the free Google AI Studio tier may differ'
