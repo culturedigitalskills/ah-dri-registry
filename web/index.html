@@ -3,73 +3,246 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A&amp;H DRI Registry</title>
-<meta name="description" content="Compute, tools and AI services for UK arts and humanities researchers.">
+<title>Where can I run my research? Connecting Arts and Humanities</title>
+<meta name="description" content="Compute, tools and AI services for UK arts and humanities researchers: who can apply, what it costs and what happens to your data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#1d2433; --muted:#5b6475; --line:#d9dde5; --bg:#fafbfc; --accent:#2b5fa8; --tag:#eef2f8; }
+  :root {
+    --forest: #2f3a31;      /* text, dark node */
+    --sage: #a9b593;        /* column */
+    --celadon: #a0beac;     /* circuit traces */
+    --stone: #e7e4dd;       /* page */
+    --parchment: #f6f5f0;   /* reading surface */
+    --rule: #cfd3c6;
+    --muted: #5d665e;
+    --brick: #9b4a3a;
+    --ochre: #8a6a22;
+    --serif: Spectral, Georgia, serif;
+    --sans: "IBM Plex Sans", system-ui, sans-serif;
+  }
   * { box-sizing: border-box; }
-  body { margin:0; font:16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; color:var(--ink); background:#fff; }
-  header, main, footer { max-width:1100px; margin:0 auto; padding:0 1rem; }
-  header { padding-top:2rem; }
-  h1 { font-size:1.6rem; margin:0 0 .25rem; }
-  header p { color:var(--muted); margin:0 0 1rem; max-width:60ch; }
-  nav[role=tablist] { display:flex; gap:.25rem; border-bottom:1px solid var(--line); margin-top:1rem; }
-  nav button { font:inherit; padding:.5rem .9rem; border:1px solid transparent; border-bottom:none; background:none; cursor:pointer; color:var(--muted); border-radius:6px 6px 0 0; }
-  nav button[aria-selected=true] { color:var(--ink); border-color:var(--line); background:#fff; margin-bottom:-1px; font-weight:600; }
-  .controls { display:flex; flex-wrap:wrap; gap:.5rem; margin:1rem 0; }
-  .controls input, .controls select { font:inherit; padding:.4rem .6rem; border:1px solid var(--line); border-radius:6px; background:#fff; }
-  .controls input { flex:1 1 220px; }
-  .count { color:var(--muted); font-size:.9rem; margin-bottom:.5rem; }
-  .card { border:1px solid var(--line); border-radius:8px; padding:.9rem 1rem; margin-bottom:.75rem; background:#fff; }
-  .card h2 { font-size:1.1rem; margin:0; }
-  .card h2 a { color:var(--accent); text-decoration:none; }
-  .card .sub { color:var(--muted); font-size:.9rem; margin:.15rem 0 .5rem; }
-  .tags { display:flex; flex-wrap:wrap; gap:.35rem; margin:.4rem 0; }
-  .tag { background:var(--tag); border-radius:999px; padding:.1rem .6rem; font-size:.8rem; }
-  details summary { cursor:pointer; color:var(--accent); font-size:.9rem; margin-top:.4rem; }
-  dl { display:grid; grid-template-columns:minmax(140px, 220px) 1fr; gap:.3rem 1rem; margin:.6rem 0 0; font-size:.9rem; }
-  dt { color:var(--muted); }
-  dd { margin:0; overflow-wrap:anywhere; }
-  .tbc { background:#fff4d6; }
-  footer { color:var(--muted); font-size:.85rem; padding:2rem 1rem; border-top:1px solid var(--line); margin-top:2rem; }
-  footer a, header a { color:var(--accent); }
-  @media (max-width:600px) { dl { grid-template-columns:1fr; } dt { margin-top:.4rem; } }
+  html { background: var(--stone); }
+  body { margin: 0; color: var(--forest); font: 400 17px/1.6 var(--serif); }
+  a { color: var(--forest); text-decoration-color: var(--celadon); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--forest); }
+  :focus-visible { outline: 2px solid var(--forest); outline-offset: 3px; }
+  .page { max-width: 1040px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* Masthead: the project's column-and-circuit mark */
+  .mast { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.25rem; padding: 2rem 0 0; }
+  .mast svg { width: 56px; height: 68px; flex: none; }
+  .mast .brand { font-family: var(--serif); line-height: 1.15; }
+  .mast .brand b { display: block; font-weight: 600; font-size: 1.15rem; }
+  .mast .brand span { font-size: 1.05rem; }
+  .mast nav { margin-left: auto; display: flex; gap: 1.25rem; font: 500 .9rem var(--sans); }
+
+  /* Opening: a question, answered by the three ways in */
+  .opening { padding: 3.5rem 0 2rem; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 2.5rem; align-items: end; }
+  h1 { font: 500 clamp(2.4rem, 6vw, 4.1rem)/1.02 var(--serif); margin: 0; letter-spacing: -.015em; }
+  .opening p { margin: 0; color: var(--muted); max-width: 40ch; font-size: 1.1rem; }
+
+  /* The three collections, joined like traces on a board */
+  .ways { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 3px solid var(--sage); }
+  .way { font: inherit; text-align: left; background: none; border: 0; border-right: 1px solid var(--rule); padding: 1rem 1.25rem 1.25rem 0; cursor: pointer; color: var(--muted); position: relative; }
+  .way + .way { padding-left: 1.25rem; }
+  .way:last-child { border-right: 0; }
+  .way::before { content: ""; position: absolute; top: -9px; left: 0; width: 15px; height: 15px; border-radius: 50%; background: var(--stone); border: 3px solid var(--celadon); }
+  .way + .way::before { left: 1.25rem; }
+  .way b { display: block; font: 600 1.35rem/1.2 var(--serif); color: var(--forest); margin: .5rem 0 .2rem; }
+  .way span { font: 400 .9rem/1.4 var(--sans); }
+  .way[aria-selected="true"]::before { background: var(--forest); border-color: var(--forest); }
+  .way[aria-selected="true"] b { text-decoration: underline; text-decoration-color: var(--sage); text-decoration-thickness: 3px; text-underline-offset: 6px; }
+
+  /* Finder on the reading surface */
+  .sheet { background: var(--parchment); margin-top: 2rem; padding: 2rem 2.25rem 2.5rem; }
+  .finder { display: grid; gap: 1rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule); }
+  .ask { font: 400 1.25rem var(--serif); font-style: italic; margin: 0; }
+  .needs { display: flex; flex-wrap: wrap; gap: .4rem 1.5rem; margin: 0; padding: 0; border: 0; }
+  .needs label { display: inline-flex; align-items: center; gap: .5rem; font: 500 .95rem var(--sans); cursor: pointer; }
+  .needs input { appearance: none; width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--celadon); margin: 0; background: transparent; cursor: pointer; }
+  .needs input:checked { background: var(--forest); border-color: var(--forest); }
+  .refine { display: flex; flex-wrap: wrap; gap: .6rem; }
+  .refine input, .refine select { font: 400 .95rem var(--sans); color: var(--forest); background: #fff; border: 1px solid var(--rule); border-radius: 2px; padding: .5rem .65rem; }
+  .refine input { flex: 1 1 280px; }
+  .tally { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1rem; font: 400 .9rem var(--sans); color: var(--muted); padding: 1rem 0 .25rem; }
+  .tally button { font: inherit; color: var(--forest); background: none; border: 0; padding: 0; text-decoration: underline; text-decoration-color: var(--celadon); text-underline-offset: 3px; cursor: pointer; }
+
+  /* Entries as a catalogue */
+  .entry { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: .5rem 2.5rem; padding: 1.5rem 0; border-bottom: 1px solid var(--rule); }
+  .entry h3 { font: 600 1.4rem/1.2 var(--serif); margin: 0 0 .25rem; }
+  .entry .by { font: 400 .9rem/1.4 var(--sans); color: var(--muted); margin: 0; }
+  .entry .what { margin: 0 0 .6rem; }
+  .signals { list-style: none; margin: 0; padding: 0; display: grid; gap: .2rem; font: 400 .92rem/1.45 var(--sans); }
+  .signals li { display: flex; gap: .55rem; align-items: baseline; }
+  .signals li::before { content: ""; flex: none; width: 9px; height: 9px; border-radius: 50%; border: 2px solid var(--celadon); transform: translateY(1px); }
+  .signals li.good::before { background: var(--forest); border-color: var(--forest); }
+  .signals li.caution { color: var(--ochre); }
+  .signals li.caution::before { border-color: var(--ochre); }
+  .signals li.stop { color: var(--brick); }
+  .signals li.stop::before { background: var(--brick); border-color: var(--brick); }
+  details { grid-column: 1 / -1; }
+  summary { cursor: pointer; font: 500 .9rem var(--sans); color: var(--muted); }
+  summary:hover { color: var(--forest); }
+  dl { display: grid; grid-template-columns: minmax(160px, 240px) 1fr; gap: .35rem 1.5rem; margin: 1rem 0 0; font: 400 .92rem/1.5 var(--sans); }
+  dt { color: var(--muted); }
+  dd { margin: 0; overflow-wrap: anywhere; }
+  .tbc { background: #ece6cf; padding: 0 .15rem; }
+  .nothing { padding: 2rem 0; font-style: italic; }
+
+  footer { padding: 2rem 0 3rem; font: 400 .88rem/1.6 var(--sans); color: var(--muted); max-width: 70ch; }
+
+  @media (max-width: 760px) {
+    .page { padding: 0 1rem; }
+    .mast nav { margin-left: 0; width: 100%; }
+    .opening { grid-template-columns: 1fr; padding-top: 2.25rem; gap: 1rem; }
+    .ways { grid-template-columns: 1fr; border-top: 0; border-left: 3px solid var(--sage); }
+    .way, .way + .way { border-right: 0; border-bottom: 1px solid var(--rule); padding: .75rem 0 .9rem 1.25rem; }
+    .way::before, .way + .way::before { top: 1.05rem; left: -9px; }
+    .way b { margin-top: 0; }
+    .sheet { padding: 1.25rem 1rem 2rem; margin-left: -1rem; margin-right: -1rem; }
+    .entry { grid-template-columns: 1fr; }
+    dl { grid-template-columns: 1fr; }
+    dt { margin-top: .5rem; }
+  }
 </style>
 </head>
 <body>
-<header>
-  <h1>A&amp;H DRI Registry</h1>
-  <p>Compute, tools and AI services that UK arts and humanities researchers can use, what they cost and how to get access. A community resource: entries marked <span class="tbc">[to be confirmed]</span> still need checking.</p>
-  <p><a href="api/v1/index.json">API</a> · <a href="https://github.com/culturedigitalskills/ah-dri-registry">Source and contributions</a> · <a href="https://github.com/culturedigitalskills/ah-dri-registry/blob/main/docs/how-this-was-made.md">How this was made</a></p>
-  <nav role="tablist" aria-label="Collections"></nav>
-</header>
-<main>
-  <div class="controls" id="controls"></div>
-  <div class="count" id="count" aria-live="polite"></div>
-  <div id="list"></div>
-</main>
-<footer>
-  Data: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, DRI community contributors. Code: MIT.
-  Check details with each provider before applying or uploading data. This is not legal or procurement advice.
-</footer>
+<div class="page">
+  <header class="mast">
+    <svg viewBox="0 0 56 68" role="img" aria-label="Column and circuit mark">
+      <g stroke-linecap="round" fill="none">
+        <line x1="6" y1="4" x2="50" y2="4" stroke="#a9b593" stroke-width="3"/>
+        <line x1="10" y1="9" x2="46" y2="9" stroke="#a9b593" stroke-width="3"/>
+        <line x1="17" y1="14" x2="17" y2="44" stroke="#a9b593" stroke-width="3"/>
+        <line x1="24" y1="14" x2="24" y2="50" stroke="#a9b593" stroke-width="3"/>
+        <line x1="31" y1="14" x2="31" y2="50" stroke="#a9b593" stroke-width="3"/>
+        <line x1="38" y1="14" x2="38" y2="44" stroke="#a9b593" stroke-width="3"/>
+        <line x1="11" y1="46" x2="45" y2="46" stroke="#a9b593" stroke-width="3"/>
+        <path d="M17 44 v6 H5 M38 44 v6 h13 M24 50 v6" stroke="#a0beac" stroke-width="2.5"/>
+      </g>
+      <circle cx="4" cy="50" r="3.2" fill="#a0beac"/>
+      <circle cx="52" cy="50" r="3.2" fill="#a0beac"/>
+      <circle cx="24" cy="58" r="3.2" fill="#a0beac"/>
+      <circle cx="31" cy="60" r="4.2" fill="#2f3a31"/>
+      <line x1="31" y1="50" x2="31" y2="56" stroke="#2f3a31" stroke-width="2.5"/>
+    </svg>
+    <div class="brand"><b>Connecting Arts and Humanities</b><span>Infrastructures for AI Capability</span></div>
+    <nav aria-label="About this registry">
+      <a href="https://github.com/culturedigitalskills/ah-dri-registry/blob/main/CONTRIBUTING.md">Contribute</a>
+      <a href="https://github.com/culturedigitalskills/ah-dri-registry/blob/main/docs/how-this-was-made.md">How this was made</a>
+      <a href="api/v1/index.json">API</a>
+    </nav>
+  </header>
+
+  <section class="opening">
+    <h1>Where can I run my research?</h1>
+    <p>Supercomputers, cloud services, tools and AI assistants open to UK arts and humanities researchers, with who can apply, what it costs and what happens to your data.</p>
+  </section>
+
+  <div class="ways" role="tablist" aria-label="What are you looking for?"></div>
+
+  <main class="sheet">
+    <section class="finder" aria-label="Search and filter">
+      <p class="ask" id="ask"></p>
+      <fieldset class="needs" id="needs"></fieldset>
+      <div class="refine" id="refine"></div>
+    </section>
+    <div class="tally"><span id="count" aria-live="polite"></span><span id="tools"></span></div>
+    <div id="list"></div>
+  </main>
+
+  <footer>
+    A community registry compiled from public sources by the Connecting Arts and Humanities project and contributors.
+    Details marked <span class="tbc">[to be confirmed]</span> still need checking, so confirm with the provider before you apply or upload data.
+    Data <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; code MIT.
+    <a href="https://github.com/culturedigitalskills/ah-dri-registry/issues/new/choose">Suggest an entry or a correction</a>.
+  </footer>
+</div>
+
 <script>
 const COLLECTIONS = [
-  { slug: "resources", title: "Resources", filters: ["provider_level", "architecture", "cost_band", "application_window", "national_programme"],
-    sub: r => [r.provider, r.national_programme].filter(Boolean).join(" · "),
-    tags: ["architecture", "interface", "cost_band", "application_window", "ai_models_available"],
-    summary: r => r.description },
-  { slug: "tools", title: "Tools and models", filters: ["type", "runs_on", "cost"],
-    sub: r => r.organisation, tags: ["type", "runs_on", "cost", "ease_of_use"], summary: r => r.notes },
-  { slug: "ai-services", title: "AI services", filters: ["provider", "version", "trains_on_inputs", "sensitive_data"],
-    sub: r => [r.provider, r.version].join(" · "), tags: ["access", "trains_on_inputs", "sensitive_data", "cost"],
-    summary: r => r.data_location },
+  {
+    slug: "resources", title: "Computing services", noun: "computing services",
+    blurb: "Supercomputers, clusters, cloud and notebooks",
+    ask: "Which of these do you need?",
+    needs: [
+      { key: "free", label: "No charge to me", test: r => ["Free at point of use", "Allocation-based"].includes(r.cost_band) },
+      { key: "gpu", label: "GPUs", test: r => r.architecture === "CPU + GPU" },
+      { key: "uk", label: "Servers in the UK", test: r => /^UK/.test(r.server_location || "") },
+      { key: "now", label: "Open for applications", test: r => ["Open all year", "Not applicable (sign up any time)"].includes(r.application_window) && !["Retirement", "Termination"].includes(r.life_cycle_status) },
+      { key: "sensitive", label: "Sensitive data allowed", test: r => ["Yes", "With conditions"].includes(r.sensitive_data) },
+    ],
+    filters: { provider_level: "Any kind of provider", national_programme: "Any national programme", interface: "Any way of working" },
+    by: r => [r.provider, r.national_programme && r.national_programme !== "Not applicable" ? r.national_programme : null].filter(Boolean).join(", "),
+    what: r => r.good_for || r.description,
+    signals: r => [
+      r.life_cycle_status === "Termination" ? ["Closed to all users", "stop"]
+        : r.life_cycle_status === "Retirement" ? ["Closing down", "caution"]
+        : r.life_cycle_status === "Implementation" ? ["Not open yet", "caution"] : null,
+      r.application_window === "Closed" ? null
+        : r.application_window === "Not applicable (sign up any time)" ? ["Sign up any time", "good"]
+        : r.application_window === "Open all year" ? ["Applications open all year", "good"]
+        : r.application_window === "Periodic calls" ? ["Apply in periodic calls", ""]
+        : r.application_window === "Not yet published" ? ["Application route not yet published", "caution"] : null,
+      r.cost_band && !["Retirement", "Termination"].includes(r.life_cycle_status) && r.application_window !== "Closed" && [r.indicative_cost || r.cost_band, r.cost_band === "Commercial" ? "caution" : ["Free at point of use", "Allocation-based"].includes(r.cost_band) ? "good" : ""],
+      r.architecture && [`${r.architecture}${r.interface ? ", " + r.interface.toLowerCase() : ""}`, ""],
+      r.server_location && ["Servers: " + r.server_location, ""],
+    ],
+  },
+  {
+    slug: "tools", title: "Tools and models", noun: "tools and models",
+    blurb: "Software you run yourself, and model libraries",
+    ask: "What matters to you?",
+    needs: [
+      { key: "free", label: "Free", test: r => r.cost === "Free" },
+      { key: "local", label: "Data stays on my machine", test: r => r.data_stays_local === "Yes" },
+      { key: "nocli", label: "No command line", test: r => ["Desktop app", "Web interface"].includes(r.ease_of_use) },
+    ],
+    filters: { type: "Any type", runs_on: "Runs anywhere" },
+    by: r => r.organisation,
+    what: r => r.notes,
+    signals: r => [
+      r.cost && [r.cost, r.cost === "Free" ? "good" : ""],
+      r.data_stays_local === "Yes" ? ["Your data stays on your machine", "good"] : r.data_stays_local === "Optional" ? ["Can run locally or in the cloud", ""] : null,
+      [`${r.type}; runs on ${(r.runs_on || "").toLowerCase()}`, ""],
+      r.ease_of_use && ["Used through: " + r.ease_of_use.toLowerCase(), ""],
+      r.licence && ["Licence: " + r.licence, ""],
+    ],
+  },
+  {
+    slug: "ai-services", title: "AI services", noun: "AI services",
+    blurb: "Chat assistants and model APIs, version by version",
+    ask: "What do you need to be sure of?",
+    needs: [
+      { key: "notrain", label: "Doesn't train on my data", test: r => r.trains_on_inputs === "No" },
+      { key: "uni", label: "University versions", test: r => r.version === "Institutional / education" },
+      { key: "sensitive", label: "Possible for sensitive data", test: r => ["Yes", "With conditions"].includes(r.sensitive_data) },
+      { key: "open", label: "Open-weight models", test: r => ["Open-weight", "Mixed"].includes(r.model_openness) },
+    ],
+    filters: { provider: "Any provider", version: "Any version" },
+    by: r => `${r.provider}, ${{ "Free consumer": "free personal version", "Paid individual": "paid personal version", "Institutional / education": "university version", "API": "API" }[r.version] || r.version}`,
+    what: r => r.notes,
+    signals: r => [
+      r.trains_on_inputs === "Yes" ? ["Trains on your chats unless you opt out", "stop"]
+        : r.trains_on_inputs === "No" ? ["Doesn't train on your data", "good"]
+        : ["Training on your data: " + r.trains_on_inputs.toLowerCase(), "caution"],
+      r.sensitive_data === "No" ? ["Not for sensitive data", "stop"]
+        : r.sensitive_data === "With conditions" ? ["Sensitive data only under your institution's terms", "caution"]
+        : ["Sensitive data: " + r.sensitive_data.toLowerCase(), ""],
+      r.data_location && ["Data: " + r.data_location, ""],
+      [r.cost + (r.model_openness ? "; " + r.model_openness.toLowerCase() + " model" : ""), ""],
+    ],
+  },
 ];
-const cache = {}, schemas = {};
-let current = COLLECTIONS[0];
 
+const cache = {}, schemas = {};
+const state = { coll: COLLECTIONS[0], q: "", needs: new Set(), sel: {} };
+const $ = id => document.getElementById(id);
 const el = (tag, attrs = {}, ...kids) => {
   const n = document.createElement(tag);
-  for (const [k, v] of Object.entries(attrs)) k === "text" ? n.textContent = v : n.setAttribute(k, v);
+  for (const [k, v] of Object.entries(attrs)) k === "text" ? (n.textContent = v) : n.setAttribute(k, v);
   kids.flat().forEach(k => k && n.append(k));
   return n;
 };
@@ -80,6 +253,25 @@ const linkify = v => {
   if (String(v).includes("[to be confirmed]")) span.className = "tbc";
   return span;
 };
+
+/* Shareable addresses, e.g. #resources?need=gpu,uk&q=bristol */
+function readHash() {
+  const [slug, query = ""] = location.hash.slice(1).split("?");
+  const c = COLLECTIONS.find(c => c.slug === slug);
+  if (!c) return;
+  const p = new URLSearchParams(query);
+  state.coll = c; state.q = p.get("q") || "";
+  state.needs = new Set((p.get("need") || "").split(",").filter(Boolean));
+  state.sel = {}; Object.keys(c.filters).forEach(f => p.get(f) && (state.sel[f] = p.get(f)));
+}
+function writeHash() {
+  const p = new URLSearchParams();
+  if (state.needs.size) p.set("need", [...state.needs].join(","));
+  if (state.q) p.set("q", state.q);
+  Object.entries(state.sel).forEach(([k, v]) => v && p.set(k, v));
+  const qs = p.toString();
+  history.replaceState(null, "", `#${state.coll.slug}${qs ? "?" + qs : ""}`);
+}
 
 async function load(c) {
   if (!cache[c.slug]) {
@@ -92,53 +284,76 @@ async function load(c) {
   return cache[c.slug];
 }
 
-function tabs() {
-  const nav = document.querySelector("nav");
-  nav.replaceChildren(...COLLECTIONS.map(c => {
-    const b = el("button", { role: "tab", "aria-selected": String(c === current), text: c.title });
-    b.onclick = () => { current = c; tabs(); render(); };
+function ways() {
+  document.querySelector(".ways").replaceChildren(...COLLECTIONS.map(c => {
+    const b = el("button", { class: "way", role: "tab", "aria-selected": String(c === state.coll), "aria-controls": "list" },
+      el("b", { text: c.title }), el("span", { text: c.blurb }));
+    b.onclick = () => { state.coll = c; state.q = ""; state.needs.clear(); state.sel = {}; ways(); render(); };
     return b;
   }));
 }
 
 async function render() {
-  const items = await load(current), props = schemas[current.slug];
-  const controls = document.getElementById("controls");
-  const q = el("input", { type: "search", placeholder: "Search", "aria-label": "Search" });
-  const selects = current.filters.map(f => {
+  const c = state.coll, items = await load(c), props = schemas[c.slug];
+  $("ask").textContent = c.ask;
+  $("needs").replaceChildren(el("legend", { class: "visually-hidden", style: "position:absolute;left:-9999px", text: c.ask }),
+    ...c.needs.map(n => {
+      const box = el("input", { type: "checkbox", value: n.key });
+      box.checked = state.needs.has(n.key);
+      box.onchange = () => { box.checked ? state.needs.add(n.key) : state.needs.delete(n.key); update(); };
+      return el("label", {}, box, n.label);
+    }));
+  const search = el("input", { type: "search", placeholder: "Search by name, place or task, e.g. transcription", "aria-label": "Search", value: state.q });
+  search.oninput = () => { state.q = search.value; update(); };
+  const selects = Object.entries(c.filters).map(([f, any]) => {
     const values = [...new Set(items.map(i => i[f]).filter(Boolean))].sort();
-    return el("select", { "aria-label": props[f].title, "data-field": f },
-      el("option", { value: "", text: `${props[f].title}: any` }), values.map(v => el("option", { value: v, text: v })));
+    const s = el("select", { "aria-label": props[f].title }, el("option", { value: "", text: any }), values.map(v => el("option", { value: v, text: v })));
+    s.value = state.sel[f] || "";
+    s.onchange = () => { state.sel[f] = s.value; update(); };
+    return s;
   });
-  controls.replaceChildren(q, ...selects);
-  const update = () => {
-    const term = q.value.trim().toLowerCase();
-    const shown = items.filter(i =>
-      selects.every(s => !s.value || i[s.dataset.field] === s.value) &&
-      (!term || JSON.stringify(i).toLowerCase().includes(term)));
-    document.getElementById("count").textContent = `${shown.length} of ${items.length}`;
-    document.getElementById("list").replaceChildren(...shown.map(card));
-  };
-  q.oninput = update; selects.forEach(s => s.onchange = update);
+  $("refine").replaceChildren(search, ...selects);
   update();
 }
 
-function card(r) {
-  const props = schemas[current.slug];
-  const title = r.webpage ? el("a", { href: r.webpage, text: r.name }) : r.name;
-  const details = el("details", {}, el("summary", { text: "All details" }),
-    el("dl", {}, Object.entries(r).filter(([k]) => k !== "name").flatMap(([k, v]) =>
+function update() {
+  const c = state.coll, items = cache[c.slug], term = state.q.trim().toLowerCase();
+  const needs = c.needs.filter(n => state.needs.has(n.key));
+  const shown = items.filter(i =>
+    needs.every(n => n.test(i)) &&
+    Object.entries(state.sel).every(([k, v]) => !v || i[k] === v) &&
+    (!term || JSON.stringify(i).toLowerCase().includes(term)));
+  writeHash();
+  $("count").textContent = shown.length === items.length ? `All ${items.length} ${c.noun}` : `${shown.length} of ${items.length} ${c.noun}`;
+  const narrowed = term || needs.length || Object.values(state.sel).some(Boolean);
+  const clear = el("button", { type: "button", text: "Clear" });
+  clear.onclick = () => { state.q = ""; state.needs.clear(); state.sel = {}; render(); };
+  const share = el("button", { type: "button", text: "Copy link to this list" });
+  share.onclick = async () => { try { await navigator.clipboard.writeText(location.href); share.textContent = "Link copied"; } catch { share.textContent = "Copy the address bar to share"; } };
+  $("tools").replaceChildren(...(narrowed ? [clear, " · ", share] : []));
+  $("list").replaceChildren(...(shown.length ? shown.map(entry)
+    : [el("p", { class: "nothing" }, "Nothing meets all of these. Untick one to see more, or ",
+        el("a", { href: "https://github.com/culturedigitalskills/ah-dri-registry/issues/new/choose", text: "suggest a service we're missing" }), ".")]));
+}
+
+function entry(r) {
+  const c = state.coll, props = schemas[c.slug];
+  const signals = c.signals(r).filter(s => s && s[0]).map(([text, tone]) => el("li", { class: tone || "" }, linkify(text)));
+  const details = el("details", {}, el("summary", { text: "Everything we know: access, costs, data and contacts" }),
+    el("dl", {}, Object.entries(r).filter(([k]) => !["name", "id"].includes(k)).flatMap(([k, v]) =>
       [el("dt", { text: props[k]?.title || k }), el("dd", {}, linkify(Array.isArray(v) ? v.join(", ") : v))])));
-  return el("article", { class: "card", id: r.id },
-    el("h2", {}, title),
-    el("div", { class: "sub", text: current.sub(r) || "" }),
-    current.summary(r) ? el("p", {}, linkify(current.summary(r))) : null,
-    el("div", { class: "tags" }, current.tags.filter(t => r[t]).map(t => el("span", { class: "tag", title: props[t].title,
-      text: ["Yes", "No", "Unknown", "Optional", "With conditions", "Opt-out available"].includes(r[t]) ? `${props[t].title}: ${r[t]}` : r[t] }))),
+  return el("article", { class: "entry", id: r.id },
+    el("div", {},
+      el("h3", {}, r.webpage ? el("a", { href: r.webpage, text: r.name }) : r.name),
+      el("p", { class: "by", text: c.by(r) || "" })),
+    el("div", {},
+      c.what(r) ? el("p", { class: "what" }, linkify(c.what(r))) : null,
+      el("ul", { class: "signals" }, signals)),
     details);
 }
 
-tabs(); render();
+readHash(); ways(); render();
+window.addEventListener("hashchange", () => { readHash(); ways(); render(); });
 </script>
 </body>
 </html>
