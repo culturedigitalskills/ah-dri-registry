@@ -354,11 +354,12 @@ function update() {
     (membersOnly.length || closed.length ? `, plus ${membersOnly.length} for members only and ${closed.length} no longer open` : "");
   const group = (title, note, rows) => rows.length ? el("section", { class: "group" },
     el("h2", { text: title }), el("p", { class: "note", text: note }), rows.map(entry)) : null;
-  $("list").replaceChildren(
+  $("list").replaceChildren(...[
     ...(main.length ? main.map(entry) : [nothing()]),
     group("Only for members of these institutions",
       "Listed so you know they exist. If you are not at one of these institutions, ask your own research computing or IT team: most universities run a cluster like these, and some offer access to partners.", membersOnly),
-    group("No longer open to new users", "Kept for reference, with pointers to successor services where known.", closed));
+    group("No longer open to new users", "Kept for reference, with pointers to successor services where known.", closed),
+  ].filter(Boolean));
 }
 
 function entry(r) {
