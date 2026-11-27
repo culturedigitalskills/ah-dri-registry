@@ -11,4 +11,4 @@ cost: Free + paid tiers
 model_openness: Proprietary
 webpage: https://claude.ai
 last_checked: '2026-11-25'
-notes: 'Covers Free, Pro and Max personal plans. Users choose a training setting at sign-up; turn off 'Help improve Claude' in Settings > Privacy. Data kept five years if training is allowed, 30 days if not. Privacy policy can be found here: https://privacy.claude.com/en/'
+notes: "Covers Free, Pro and Max personal plans. Users choose a training setting at sign-up; turn off 'Help improve Claude' in Settings > Privacy. Data kept five years if training is allowed, 30 days if not. Privacy policy can be found here: https://privacy.claude.com/en/"

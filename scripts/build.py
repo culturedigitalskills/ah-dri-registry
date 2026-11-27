@@ -54,9 +54,12 @@ def load_yaml(path):
 
 
 def normalise(value):
-    """Turn YAML dates into ISO strings so they validate and serialise."""
+    """Turn YAML dates and yes/no values back into the strings the schema expects."""
     if isinstance(value, (dt.date, dt.datetime)):
         return value.isoformat()[:10]
+    if isinstance(value, bool):
+        # YAML reads an unquoted Yes/No as true/false; turn it back into the label
+        return "Yes" if value else "No"
     if isinstance(value, list):
         return [normalise(v) for v in value]
     if isinstance(value, dict):
