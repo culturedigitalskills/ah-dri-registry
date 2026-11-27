@@ -4,7 +4,7 @@ provider: Google
 version: API
 access: API
 institutional_licence: 'No'
-trains_on_inputs: Unknown
+trains_on_inputs: 'No'
 data_location: Choose a region, including London (europe-west2); processing happens in that region
 sensitive_data: With conditions
 cost: Pay per use

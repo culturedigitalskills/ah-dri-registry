@@ -5,7 +5,7 @@ provider_level: Institutional
 national_programme: Tier-2 (legacy)
 webpage: https://www.ni-hpc.ac.uk
 description: Northern Ireland's Tier-2 HPC service, run by Queen's University Belfast and Ulster University.
-good_for: General HPC for researchers in Northern Ireland. Details to be confirmed.
+good_for: General HPC for researchers in Northern Ireland. 
 eosc_subcategory: Job Execution
 architecture: CPU + GPU
 eligibility: Queen's University Belfast and Ulster University via registration form; other UK researchers free through UKRI Access to HPC calls.
