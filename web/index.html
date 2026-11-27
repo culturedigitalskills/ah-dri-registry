@@ -128,7 +128,9 @@
   .compare tbody th, .compare thead th:first-child { position: sticky; left: 0; background: var(--parchment); }
   .compare td { min-width: 170px; }
 
-  footer { padding: 2rem 0 3rem; font: 400 .88rem/1.6 var(--sans); color: var(--muted); max-width: 70ch; }
+  footer { margin-top: 2rem; padding: 1.75rem 2.25rem 2.5rem; background: var(--parchment); border-top: 3px solid var(--sage); font: 400 .9rem/1.65 var(--sans); color: var(--muted); }
+  footer p { margin: 0 0 .75rem; }
+  footer p:last-child { margin-bottom: 0; }
 
   @media (max-width: 760px) {
     .page { padding: 0 1rem; }
@@ -144,9 +146,7 @@
     .compare tbody th { width: 105px; min-width: 105px; padding-right: .6rem; }
     dl { grid-template-columns: 1fr; }
     dt { margin-top: .5rem; }
-    footer { margin-top: 2rem; padding: 1.75rem 2.25rem 2.5rem; background: var(--parchment); border-top: 3px solid var(--sage); font: 400 .9rem/1.65 var(--sans); color: var(--muted); }
-    footer p { margin: 0 0 .75rem; }
-    footer p:last-child { margin-bottom: 0; }    
+    footer { padding: 1.25rem 1rem 2rem; margin-left: -1rem; margin-right: -1rem; }
   }
 </style>
 </head>
